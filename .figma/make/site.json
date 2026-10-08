@@ -1,0 +1,10 @@
+{
+  "description": "This platform offers digital solutions for businesses, enhancing their online presence and converting visitors into clients through clear service presentation and effective communication.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
