@@ -36,3 +36,43 @@
 .animate-orbit {
   animation: orbit-rotate 30s linear infinite;
 }
+
+@keyframes hero-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-slide-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hero-content-enter {
+  animation: hero-content-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-slide-progress {
+  transform-origin: left center;
+  animation: hero-slide-progress 5s linear forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content-enter {
+    animation: none;
+  }
+
+  .hero-slide-progress {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
