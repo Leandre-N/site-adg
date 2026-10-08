@@ -1,0 +1,6 @@
+{
+  "name": "Les Anges du Digital — Excellence Numérique",
+  "description": "Société d'ingénierie logicielle et créateur de la suite ERP TENYSY à Douala, Cameroun.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
