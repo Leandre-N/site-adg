@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProcessPhase } from '../types';
+import { Reveal } from './Reveal';
 
 /**
  * ProcessSection: Méthodologie en 4 phases d'ingénierie
@@ -42,7 +43,8 @@ export const ProcessSection: React.FC = () => {
       <div className="max-w-[1380px] mx-auto">
         
         {/* En-tête centré */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
+        <div>
           <span className="text-[12px] font-bold tracking-[0.2em] uppercase text-[#B58017]">
             MÉTHODOLOGIE EN 4 PHASES
           </span>
@@ -53,17 +55,16 @@ export const ProcessSection: React.FC = () => {
             Une méthode rigoureuse orientée résultats et respect strict des délais pour garantir une exécution sans friction.
           </p>
         </div>
+        </Reveal>
 
         {/* Grille 4 cartes étapes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {phases.map((phase) => {
+          {phases.map((phase, index) => {
             const isTeal = phase.badgeColor === 'teal';
 
             return (
-              <div
-                key={phase.number}
-                className="bg-white rounded-2xl p-7 border border-slate-200/90 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all duration-200 flex flex-col justify-between relative group"
-              >
+              <Reveal key={phase.number} delay={index * 100} className="h-full">
+              <div className="motion-card h-full bg-white rounded-2xl p-7 border border-slate-200/90 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all duration-200 flex flex-col justify-between relative group">
                 {/* Ligne d'accent supérieure */}
                 <div
                   className={`absolute top-0 left-6 right-6 h-1 rounded-t-full ${
@@ -110,6 +111,7 @@ export const ProcessSection: React.FC = () => {
                   <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-[#E2A93B] transition-colors" />
                 </div>
               </div>
+              </Reveal>
             );
           })}
         </div>

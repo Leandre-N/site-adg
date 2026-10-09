@@ -115,6 +115,8 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const timer = window.setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % HERO_COUNT);
     }, HERO_SWAP_MS);

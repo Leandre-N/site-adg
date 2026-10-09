@@ -1,4 +1,6 @@
 import React from 'react';
+import { Reveal } from './Reveal';
+import { CountUp } from './CountUp';
 
 /**
  * StatsSection: Compteurs de performance et réalisations
@@ -33,12 +35,15 @@ export const StatsSection: React.FC = () => {
       <div className="max-w-[1380px] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
           {metrics.map((item, index) => (
-            <div
-              key={index}
-              className={`text-center ${index > 0 ? 'pt-6 md:pt-0' : ''}`}
-            >
+              <Reveal
+                key={index}
+                delay={index * 85}
+                className={`text-center ${index > 0 ? 'pt-6 md:pt-0' : ''}`}
+              >
+              <div className="motion-card rounded-xl py-2">
               <div className="font-['Bricolage_Grotesque'] text-[40px] sm:text-[48px] lg:text-[54px] font-[800] text-white tracking-tight leading-none tabular-nums">
-                {item.value}
+                <CountUp value={item.value} />
+                <span className="sr-only">{item.value}</span>
               </div>
               <div className="text-[15px] sm:text-[16px] font-semibold text-[#F3F5FA] mt-2">
                 {item.label}
@@ -46,7 +51,8 @@ export const StatsSection: React.FC = () => {
               <div className="text-[12px] sm:text-[13px] text-[#9AA7C7] mt-0.5 font-normal">
                 {item.sublabel}
               </div>
-            </div>
+              </div>
+              </Reveal>
           ))}
         </div>
       </div>

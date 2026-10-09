@@ -15,7 +15,6 @@ import { ProcessSection } from './components/ProcessSection';
 import { PartnersSection } from './components/PartnersSection';
 import { NewsSection } from './components/NewsSection';
 import { ContactSection } from './components/ContactSection';
-import { DesignSystemShowcase } from './components/DesignSystemShowcase';
 import { Footer } from './components/Footer';
 import { QuoteModal } from './components/QuoteModal';
 
@@ -75,8 +74,6 @@ export default function App() {
         {/* Section Contact : Coordonnées prioritaires, Téléphones & Quartier Général */}
         <ContactSection onOpenQuoteModal={() => handleOpenQuoteModal()} />
 
-        {/* Section Spécifications UI & Système de Design Officiel */}
-        <DesignSystemShowcase />
       </main>
 
       {/* 4. Pied de page institutionnel et technique */}

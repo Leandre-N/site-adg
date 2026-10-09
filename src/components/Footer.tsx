@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
     <footer className="bg-[#020713] text-[#A6B4D6] border-t border-white/10 pt-16 pb-12 px-4 sm:px-8">
       <div className="max-w-[1380px] mx-auto">
         
-        {/* Grille 4 colonnes principales */}
+        {/* Grille 3 colonnes principales */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-14 border-b border-white/8">
           
           {/* Colonne 1 : Identité & Coordonnées (lg:col-span-4) */}
@@ -54,8 +54,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
             </div>
           </div>
 
-          {/* Colonne 2 : Navigation (lg:col-span-2) */}
-          <div className="lg:col-span-2 space-y-3">
+          {/* Colonne 2 : Navigation */}
+          <div className="lg:col-span-3 space-y-3">
             <h4 className="font-['Bricolage_Grotesque'] text-[16px] font-bold text-white tracking-wide">
               Navigation
             </h4>
@@ -93,40 +93,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
             </ul>
           </div>
 
-          {/* Colonne 3 : Dernières Publications (lg:col-span-3) */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-['Bricolage_Grotesque'] text-[16px] font-bold text-white tracking-wide">
-              Dernières Publications
-            </h4>
-            <div className="space-y-3">
-              <a href="#actualites" className="block p-3 rounded-xl bg-[#091326] border border-white/5 hover:border-[#36E2C6]/40 transition-colors">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#36E2C6] block">
-                  TRANSFORMATION ERP
-                </span>
-                <span className="text-[13px] font-medium text-white line-clamp-2 mt-1">
-                  Déploiement de TENYSY dans les PME d'Afrique Centrale
-                </span>
-                <span className="text-[11px] text-slate-500 block mt-1">
-                  14 Octobre 2024
-                </span>
-              </a>
-
-              <a href="#actualites" className="block p-3 rounded-xl bg-[#091326] border border-white/5 hover:border-[#E2A93B]/40 transition-colors">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#E2A93B] block">
-                  ARCHITECTURE CLOUD
-                </span>
-                <span className="text-[13px] font-medium text-white line-clamp-2 mt-1">
-                  Sécurisation des architectures cloud d'entreprise à Douala
-                </span>
-                <span className="text-[11px] text-slate-500 block mt-1">
-                  28 Septembre 2024
-                </span>
-              </a>
-            </div>
-          </div>
-
-          {/* Colonne 4 : Accompagnement & CTA (lg:col-span-3) */}
-          <div className="lg:col-span-3 space-y-4">
+          {/* Colonne 3 : Accompagnement & CTA */}
+          <div className="lg:col-span-5 space-y-4">
             <h4 className="font-['Bricolage_Grotesque'] text-[16px] font-bold text-white tracking-wide">
               Accompagnement
             </h4>

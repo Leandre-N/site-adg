@@ -1,5 +1,6 @@
 import React from 'react';
 import { Rocket, Eye, ArrowRight, ShieldCheck, MapPin } from 'lucide-react';
+import { Reveal } from './Reveal';
 
 /**
  * AboutSection: Présentation institutionnelle et leadership
@@ -12,11 +13,11 @@ export const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* COLONNE GAUCHE: Visuel Plaque / Siège & Badge Dirigeant */}
-          <div className="lg:col-span-5 relative">
+          <Reveal className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Carte visuelle institutionnelle */}
-              <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#0B1530] via-[#13224A] to-[#1B2D5E] border-2 border-white p-8 sm:p-10 shadow-[0_20px_50px_rgba(11,21,48,0.18)] min-h-[420px] flex flex-col justify-between text-white">
+              <div className="motion-card relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#0B1530] via-[#13224A] to-[#1B2D5E] border-2 border-white p-8 sm:p-10 shadow-[0_20px_50px_rgba(11,21,48,0.18)] min-h-[420px] flex flex-col justify-between text-white">
                 
                 {/* Décoration géométrique céleste en fond */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#E2A93B]/20 to-transparent rounded-full blur-3xl pointer-events-none" />
@@ -57,7 +58,7 @@ export const AboutSection: React.FC = () => {
               </div>
 
               {/* Badge flottant Dirigeant & Fondateur */}
-              <div className="sm:absolute -bottom-6 sm:-right-4 mt-4 sm:mt-0 bg-white rounded-xl p-4 shadow-[0_12px_32px_rgba(11,21,48,0.15)] border border-slate-200/80 flex items-center gap-3.5 z-20">
+              <div className="motion-card sm:absolute -bottom-6 sm:-right-4 mt-4 sm:mt-0 bg-white rounded-xl p-4 shadow-[0_12px_32px_rgba(11,21,48,0.15)] border border-slate-200/80 flex items-center gap-3.5 z-20">
                 <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-[#E2A93B] to-[#F3C969] flex items-center justify-center text-[#0B1530] font-bold text-sm shadow">
                   TS
                 </div>
@@ -77,10 +78,10 @@ export const AboutSection: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* COLONNE DROITE: Texte éditorial & Cartes Mission/Vision */}
-          <div className="lg:col-span-7 space-y-6">
+          <Reveal className="lg:col-span-7 space-y-6">
             
             {/* Tag d'en-tête */}
             <div className="flex items-center gap-2">
@@ -106,7 +107,8 @@ export const AboutSection: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
               
               {/* Carte Mission */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow">
+              <Reveal delay={70} className="h-full">
+              <div className="motion-card h-full bg-white rounded-2xl p-6 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md">
                 <div className="w-10 h-10 rounded-xl bg-[#FFF8EB] border border-[#E2A93B]/30 flex items-center justify-center text-[#E2A93B] mb-4">
                   <Rocket className="w-5 h-5" />
                 </div>
@@ -118,9 +120,11 @@ export const AboutSection: React.FC = () => {
                   et accélérer le retour sur investissement des entreprises d'Afrique Centrale.
                 </p>
               </div>
+              </Reveal>
 
               {/* Carte Vision */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow">
+              <Reveal delay={150} className="h-full">
+              <div className="motion-card h-full bg-white rounded-2xl p-6 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md">
                 <div className="w-10 h-10 rounded-xl bg-[#E6FAF6] border border-[#36E2C6]/40 flex items-center justify-center text-[#0AA88F] mb-4">
                   <Eye className="w-5 h-5" />
                 </div>
@@ -132,6 +136,7 @@ export const AboutSection: React.FC = () => {
                   incarnées par notre suite applicative propriétaire TENYSY.
                 </p>
               </div>
+              </Reveal>
             </div>
 
             {/* Bouton d'action */}
@@ -145,7 +150,7 @@ export const AboutSection: React.FC = () => {
               </a>
             </div>
 
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

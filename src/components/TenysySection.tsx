@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Reveal } from './Reveal';
 import {
   Zap,
   SlidersHorizontal,
@@ -55,7 +56,8 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
       <div className="max-w-[1380px] mx-auto relative z-10">
         
         {/* En-tête de la section */}
-        <div className="max-w-3xl mb-16">
+        <Reveal className="max-w-3xl mb-16">
+        <div>
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="px-2.5 py-1 rounded-full bg-[#36E2C6]/15 text-[#36E2C6] border border-[#36E2C6]/30 font-bold text-[11px] tracking-wider uppercase">
               NOUVEAU PROJET
@@ -73,6 +75,7 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
             Une application centrale et limpide qui soulage la complexité administrative pour vous permettre d'accélérer vos ventes.
           </p>
         </div>
+        </Reveal>
 
         {/* Grille principale 2 colonnes */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
@@ -82,10 +85,8 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
             {features.map((feat, index) => {
               const Icon = feat.icon;
               return (
-                <div
-                  key={index}
-                  className="p-5 rounded-2xl bg-[#0E1B34] border border-white/10 hover:border-[#36E2C6]/40 transition-colors flex items-start gap-4 shadow-sm"
-                >
+                <Reveal key={index} delay={index * 75}>
+                <div className="motion-card p-5 rounded-2xl bg-[#0E1B34] border border-white/10 hover:border-[#36E2C6]/40 flex items-start gap-4 shadow-sm">
                   <div className="w-10 h-10 rounded-xl bg-[#13224A] border border-[#36E2C6]/30 flex items-center justify-center text-[#36E2C6] shrink-0 mt-0.5 shadow-xs">
                     <Icon className="w-5 h-5" />
                   </div>
@@ -98,12 +99,14 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
                     </p>
                   </div>
                 </div>
+                </Reveal>
               );
             })}
           </div>
 
           {/* COLONNE DROITE: Simulation Console Opérationnelle TENYSY */}
-          <div className="lg:col-span-7 flex flex-col">
+          <Reveal className="lg:col-span-7">
+          <div className="flex h-full flex-col">
             <div className="rounded-2xl bg-[#0E1B34] border border-[#36E2C6]/30 shadow-[0_16px_48px_rgba(0,0,0,0.5)] p-6 sm:p-8 flex flex-col justify-between h-full relative overflow-hidden">
               
               {/* Ligne d'accent supérieure */}
@@ -131,7 +134,7 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   
                   {/* Métrique 1 */}
-                  <div className="p-4 rounded-xl bg-[#091326] border border-white/8">
+                  <div className="motion-card p-4 rounded-xl bg-[#091326] border border-white/8">
                     <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
                       <Clock className="w-3.5 h-3.5 text-[#36E2C6]" />
                       <span>Temps de déploiement moyen</span>
@@ -145,7 +148,7 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
                   </div>
 
                   {/* Métrique 2 */}
-                  <div className="p-4 rounded-xl bg-[#091326] border border-white/8">
+                  <div className="motion-card p-4 rounded-xl bg-[#091326] border border-white/8">
                     <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
                       <TrendingDown className="w-3.5 h-3.5 text-[#E2A93B]" />
                       <span>Temps administratif économisé</span>
@@ -192,6 +195,7 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
 
             </div>
           </div>
+          </Reveal>
 
         </div>
 

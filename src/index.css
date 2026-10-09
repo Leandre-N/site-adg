@@ -66,6 +66,55 @@
   animation: hero-slide-progress 5s linear forwards;
 }
 
+@keyframes element-reveal-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.motion-reveal {
+  --reveal-delay: 0ms;
+}
+
+.motion-reveal[data-reveal-state='hidden'] {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0) scale(0.99);
+}
+
+.motion-reveal[data-reveal-state='visible'] {
+  animation: element-reveal-in 680ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--reveal-delay);
+}
+
+.motion-card {
+  transition:
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 280ms ease,
+    border-color 220ms ease;
+}
+
+.motion-card--pill {
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms ease,
+    color 220ms ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .motion-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .motion-card--pill:hover {
+    transform: translateY(-2px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-content-enter {
     animation: none;
@@ -74,5 +123,23 @@
   .hero-slide-progress {
     animation: none;
     transform: scaleX(1);
+  }
+
+  .motion-reveal[data-reveal-state='hidden'],
+  .motion-reveal[data-reveal-state='visible'] {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .motion-card,
+  .motion-card--pill {
+    transition: none;
+  }
+
+  .animate-pulse-subtle,
+  .animate-orbit,
+  .animate-pulse {
+    animation: none;
   }
 }

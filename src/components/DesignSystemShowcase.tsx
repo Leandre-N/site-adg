@@ -1,4 +1,5 @@
 import React from 'react';
+import { Reveal } from './Reveal';
 
 /**
  * DesignSystemShowcase: Spécifications UI & Système de Design Officiel
@@ -10,24 +11,27 @@ export const DesignSystemShowcase: React.FC = () => {
       <div className="max-w-[1380px] mx-auto">
         
         {/* Bandeau d'en-tête de la bibliothèque */}
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-4 mb-8">
+        <Reveal className="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-4 mb-8">
           <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#9AA7C7]">
             SPÉCIFICATIONS UI &amp; SYSTÈME DE DESIGN
           </span>
           <span className="text-[11px] font-mono text-[#36E2C6] bg-[#36E2C6]/10 px-2 py-0.5 rounded border border-[#36E2C6]/25">
             Design System v1.0.4
           </span>
-        </div>
+        </Reveal>
 
+        <Reveal delay={80}>
         <h3 className="font-['Bricolage_Grotesque'] text-[24px] sm:text-[28px] font-bold text-white mb-8">
           Bibliothèque de Composants Officielle
         </h3>
+        </Reveal>
 
         {/* 4 blocs de spécifications */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           {/* 1. Variantes de boutons */}
-          <div className="p-5 rounded-xl bg-[#091326] border border-white/8 space-y-3">
+          <Reveal className="h-full" delay={0}>
+          <div className="motion-card h-full p-5 rounded-xl bg-[#091326] border border-white/8 space-y-3">
             <span className="text-[11px] font-mono uppercase tracking-wider text-[#9AA7C7] block mb-3">
               Variantes de Boutons
             </span>
@@ -41,9 +45,11 @@ export const DesignSystemShowcase: React.FC = () => {
               Bouton Ghost Outline
             </button>
           </div>
+          </Reveal>
 
           {/* 2. Badges & Chips */}
-          <div className="p-5 rounded-xl bg-[#091326] border border-white/8 space-y-3">
+          <Reveal className="h-full" delay={80}>
+          <div className="motion-card h-full p-5 rounded-xl bg-[#091326] border border-white/8 space-y-3">
             <span className="text-[11px] font-mono uppercase tracking-wider text-[#9AA7C7] block mb-3">
               Badges &amp; Chips
             </span>
@@ -62,9 +68,11 @@ export const DesignSystemShowcase: React.FC = () => {
               Tonal Depth : Navies 0B1530 → 13224A
             </div>
           </div>
+          </Reveal>
 
           {/* 3. Composant Carte */}
-          <div className="p-5 rounded-xl bg-[#091326] border border-white/8 space-y-2.5">
+          <Reveal className="h-full" delay={160}>
+          <div className="motion-card h-full p-5 rounded-xl bg-[#091326] border border-white/8 space-y-2.5">
             <span className="text-[11px] font-mono uppercase tracking-wider text-[#9AA7C7] block mb-3">
               Composant Carte
             </span>
@@ -75,9 +83,11 @@ export const DesignSystemShowcase: React.FC = () => {
               Élévation 1 avec Accent Teal TENYSY.
             </div>
           </div>
+          </Reveal>
 
           {/* 4. Typographies Déclarées */}
-          <div className="p-5 rounded-xl bg-[#091326] border border-white/8 space-y-2">
+          <Reveal className="h-full" delay={240}>
+          <div className="motion-card h-full p-5 rounded-xl bg-[#091326] border border-white/8 space-y-2">
             <span className="text-[11px] font-mono uppercase tracking-wider text-[#9AA7C7] block mb-3">
               Typographies Déclarées
             </span>
@@ -91,6 +101,7 @@ export const DesignSystemShowcase: React.FC = () => {
               Zero Pricing Discipline : Strict
             </div>
           </div>
+          </Reveal>
 
         </div>
 

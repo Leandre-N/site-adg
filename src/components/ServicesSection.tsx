@@ -1,4 +1,5 @@
 import React from 'react';
+import { Reveal } from './Reveal';
 import {
   Globe,
   Smartphone,
@@ -111,7 +112,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuoteMod
       <div className="max-w-[1380px] mx-auto">
         
         {/* En-tête de section centré */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
+        <div>
           <span className="text-[12px] font-bold tracking-[0.2em] uppercase text-[#B58017]">
             PRESTATIONS D'EXCELLENCE MÉTIER
           </span>
@@ -122,18 +124,19 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuoteMod
             Une architecture intégrée conçue pour accompagner votre croissance à chaque étape stratégique.
           </p>
         </div>
+        </Reveal>
 
         {/* Grille des services */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = service.icon;
 
             if (service.isFeatured) {
               return (
                 /* Carte Phare (Web & Portails) avec style Midnight Navy Sombre */
+                <Reveal key={service.id} delay={Math.min(index * 55, 330)} className="h-full">
                 <div
-                  key={service.id}
-                  className="rounded-2xl p-7 lg:p-8 bg-[#0B1530] text-white border border-[#E2A93B]/40 shadow-[0_12px_36px_rgba(11,21,48,0.30)] flex flex-col justify-between relative overflow-hidden group hover:border-[#E2A93B] transition-all"
+                  className="motion-card h-full rounded-2xl p-7 lg:p-8 bg-[#0B1530] text-white border border-[#E2A93B]/40 shadow-[0_12px_36px_rgba(11,21,48,0.30)] flex flex-col justify-between relative overflow-hidden group hover:border-[#E2A93B] transition-all"
                 >
                   <div className="absolute top-0 right-0 w-36 h-36 bg-[#E2A93B]/15 rounded-full blur-2xl pointer-events-none" />
 
@@ -166,15 +169,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuoteMod
                     </button>
                   </div>
                 </div>
+                </Reveal>
               );
             }
 
             return (
               /* Carte Service Standard Claire */
-              <div
-                key={service.id}
-                className="rounded-2xl p-7 bg-[#F8FAFC] border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#E2A93B]/50 transition-all duration-200 flex flex-col justify-between group"
-              >
+              <Reveal key={service.id} delay={Math.min(index * 55, 330)} className="h-full">
+              <div className="motion-card h-full rounded-2xl p-7 bg-[#F8FAFC] border border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#E2A93B]/50 transition-all duration-200 flex flex-col justify-between group">
                 <div>
                   <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#E2A93B] mb-5 shadow-xs group-hover:scale-105 transition-transform">
                     <Icon className="w-5 h-5" />
@@ -198,12 +200,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuoteMod
                   </button>
                 </div>
               </div>
+              </Reveal>
             );
           })}
         </div>
 
         {/* GRANDE BANNIÈRE SUITE ERP TENYSY */}
-        <div className="mt-14 rounded-2xl p-8 sm:p-10 bg-gradient-to-r from-[#071329] via-[#0E1E40] to-[#0A1733] border border-white/15 text-white shadow-[0_16px_40px_rgba(7,19,41,0.35)] relative overflow-hidden">
+        <Reveal className="mt-14" delay={120}>
+        <div className="motion-card rounded-2xl p-8 sm:p-10 bg-gradient-to-r from-[#071329] via-[#0E1E40] to-[#0A1733] border border-white/15 text-white shadow-[0_16px_40px_rgba(7,19,41,0.35)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#36E2C6]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
@@ -245,6 +249,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuoteMod
             </div>
           </div>
         </div>
+        </Reveal>
 
       </div>
     </section>

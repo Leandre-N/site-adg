@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, Building, MessageCircle } from 'lucide-react';
+import { Reveal } from './Reveal';
 
 interface ContactSectionProps {
   onOpenQuoteModal: () => void;
@@ -26,7 +27,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenQuoteModal
       <div className="max-w-[1380px] mx-auto relative z-10">
         
         {/* Entête avec CTA direct WhatsApp et Appel */}
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-16">
+        <Reveal className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-16">
           <div className="max-w-2xl">
             <span className="text-[12px] font-bold tracking-[0.2em] uppercase text-[#E2A93B]">
               ACCOMPAGNEMENT TECHNIQUE &amp; PARTENARIAT
@@ -58,13 +59,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenQuoteModal
               <span>Appelez-nous directement</span>
             </a>
           </div>
-        </div>
+        </Reveal>
 
         {/* Grille 3 cartes de contact */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           {/* Carte 1: Lignes Téléphoniques */}
-          <div className="rounded-2xl p-7 bg-[#0E1B34] border border-white/10 hover:border-[#E2A93B]/40 transition-colors shadow-sm flex flex-col justify-between">
+          <Reveal className="h-full">
+          <div className="motion-card h-full rounded-2xl p-7 bg-[#0E1B34] border border-white/10 hover:border-[#E2A93B]/40 shadow-sm flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-xl bg-[#13224A] border border-[#E2A93B]/30 flex items-center justify-center text-[#E2A93B] mb-5 shadow">
                 <Phone className="w-5 h-5" />
@@ -97,9 +99,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenQuoteModal
               Assistance vocale &amp; WhatsApp 7j/7
             </div>
           </div>
+          </Reveal>
 
           {/* Carte 2: Messagerie Électronique */}
-          <div className="rounded-2xl p-7 bg-[#0E1B34] border border-white/10 hover:border-[#36E2C6]/40 transition-colors shadow-sm flex flex-col justify-between">
+          <Reveal delay={100} className="h-full">
+          <div className="motion-card h-full rounded-2xl p-7 bg-[#0E1B34] border border-white/10 hover:border-[#36E2C6]/40 shadow-sm flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-xl bg-[#13224A] border border-[#36E2C6]/30 flex items-center justify-center text-[#36E2C6] mb-5 shadow">
                 <Mail className="w-5 h-5" />
@@ -130,9 +134,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenQuoteModal
               </button>
             </div>
           </div>
+          </Reveal>
 
           {/* Carte 3: Quartier Général */}
-          <div className="rounded-2xl p-7 bg-[#0E1B34] border border-white/10 hover:border-[#E2A93B]/40 transition-colors shadow-sm flex flex-col justify-between">
+          <Reveal delay={200} className="h-full">
+          <div className="motion-card h-full rounded-2xl p-7 bg-[#0E1B34] border border-white/10 hover:border-[#E2A93B]/40 shadow-sm flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-xl bg-[#13224A] border border-[#E2A93B]/30 flex items-center justify-center text-[#E2A93B] mb-5 shadow">
                 <Building className="w-5 h-5" />
@@ -154,6 +160,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenQuoteModal
               Bureaux ouverts du lundi au vendredi (08h00 - 17h30)
             </div>
           </div>
+          </Reveal>
 
         </div>
 
