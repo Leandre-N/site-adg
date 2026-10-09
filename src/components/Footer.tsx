@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Mail, Clock, ArrowRight } from 'lucide-react';
+import { BrandLogo } from './BrandLogo';
 
 interface FooterProps {
   onOpenQuoteModal: () => void;
@@ -20,11 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
           {/* Colonne 1 : Identité & Coordonnées (lg:col-span-4) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-[#13224A] border border-[#E2A93B]/40 flex items-center justify-center text-[#E2A93B]">
-                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-                  <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM3.5 8C3.5 8 5.5 8.5 7.5 10.5C9.5 12.5 10 15 10 15C10 15 8.5 14.5 7 13.5C5.5 12.5 4 10.5 3.5 8ZM20.5 8C20.5 8 18.5 8.5 16.5 10.5C14.5 12.5 14 15 14 15C14 15 15.5 14.5 17 13.5C18.5 12.5 20 10.5 20.5 8ZM11 8H13V19C13 19.6 12.6 20 12 20C11.4 20 11 19.6 11 19V8Z" />
-                </svg>
-              </div>
+              <BrandLogo className="h-12 w-12 rounded-xl" />
               <div>
                 <span className="font-['Bricolage_Grotesque'] text-[18px] font-bold text-white block leading-tight">
                   Les Anges du Digital

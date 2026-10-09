@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrandLogo } from './BrandLogo';
 import { 
   MapPin, 
   Clock, 
@@ -81,17 +82,7 @@ export const Header: React.FC<HeaderProps> = ({ currentTab, onSelectTab, onOpenQ
             onClick={() => onSelectTab('accueil')}
             className="flex items-center gap-3 group text-left focus:outline-none"
           >
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#1B2D5E] to-[#0B1530] border border-[#E2A93B]/40 flex items-center justify-center shadow-lg shadow-[#E2A93B]/10 group-hover:border-[#E2A93B] transition-all">
-              {/* Heraldic Angel Emblem SVG */}
-              <svg viewBox="0 0 40 40" className="w-6 h-6 text-[#E2A93B]" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="20" cy="20" r="15" stroke="currentColor" strokeOpacity="0.4" strokeDasharray="3 3" />
-                <path d="M20 10L24 18H16L20 10Z" fill="#E2A93B" fillOpacity="0.2" />
-                <path d="M12 24C12 24 16 28 20 28C24 28 28 24 28 24" stroke="#E2A93B" strokeLinecap="round" />
-                <path d="M8 18C12 16 16 18 20 20C24 18 28 16 32 18" stroke="#36E2C6" strokeLinecap="round" />
-                <circle cx="20" cy="19" r="2.5" fill="#E2A93B" />
-              </svg>
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#36E2C6] rounded-full border-2 border-[#0B1530]"></span>
-            </div>
+            <BrandLogo className="h-12 w-12 rounded-xl transition-transform group-hover:scale-105" />
             
             <div className="flex flex-col">
               <span className="font-display text-lg sm:text-xl font-bold tracking-tight text-white group-hover:text-[#F3C969] transition-colors leading-tight">

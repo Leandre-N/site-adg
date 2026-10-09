@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { BrandLogo } from './BrandLogo';
 
 interface NavbarProps {
   onOpenQuoteModal: () => void;
@@ -29,18 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
         
         {/* LOGO: Les Anges du Digital - Excellence Numérique */}
         <a href="#hero" className="flex items-center gap-3 group focus:outline-none">
-          {/* Symbole des ailes dorées / Ange divin */}
-          <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#1E2E55] to-[#0E1B34] border border-[#E2A93B]/40 flex items-center justify-center shadow-lg shadow-[#0B1530]/80 group-hover:border-[#E2A93B] transition-all">
-            <svg
-              viewBox="0 0 24 24"
-              className="w-6 h-6 text-[#E2A93B] transform transition-transform group-hover:scale-105"
-              fill="currentColor"
-            >
-              {/* Icône stylisée Ange & Ailes */}
-              <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM3.5 8C3.5 8 5.5 8.5 7.5 10.5C9.5 12.5 10 15 10 15C10 15 8.5 14.5 7 13.5C5.5 12.5 4 10.5 3.5 8ZM20.5 8C20.5 8 18.5 8.5 16.5 10.5C14.5 12.5 14 15 14 15C14 15 15.5 14.5 17 13.5C18.5 12.5 20 10.5 20.5 8ZM11 8H13V19C13 19.6 12.6 20 12 20C11.4 20 11 19.6 11 19V8Z" />
-            </svg>
-            <div className="absolute inset-0 rounded-xl bg-[#E2A93B]/10 blur-sm pointer-events-none" />
-          </div>
+          <BrandLogo className="h-14 w-14 rounded-xl transition-transform group-hover:scale-105" />
 
           <div className="flex flex-col">
             <span className="font-['Bricolage_Grotesque'] text-[19px] sm:text-[21px] font-bold text-white tracking-tight leading-tight">
