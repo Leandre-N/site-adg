@@ -15,6 +15,14 @@ import {
 
 const HERO_SWAP_MS = 5000;
 const HERO_COUNT = 6;
+const HERO_BACKGROUNDS: ({ src: string; alt: string } | null)[] = [
+  null,
+  { src: '/assets/hero%202.jpeg', alt: 'Croissance numérique et progression des performances' },
+  { src: '/assets/hero%203.png', alt: 'Innovation digitale et outils métiers connectés' },
+  { src: '/assets/hero%204.jpg', alt: 'Cloud computing et infrastructure réseau' },
+  { src: '/assets/hero%205.jpg', alt: 'Réseau digital et écosystème connecté' },
+  { src: '/assets/hero%206.jpg', alt: 'Protection et sécurité des solutions numériques' },
+];
 
 interface HeroSectionProps {
   onOpenQuoteModal: () => void;
@@ -88,26 +96,6 @@ function HeroTenysyPhoneMockup() {
   );
 }
 
-function HeroPhoto({ src, alt }: { src: string; alt: string }) {
-  return (
-    <div className="relative mx-auto w-full max-w-[560px] overflow-hidden rounded-2xl bg-[#07152B] shadow-[0_24px_64px_rgba(0,0,0,0.3)]">
-      <img src={src} alt={alt} className="block h-auto max-h-[440px] w-full object-contain" />
-      <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#05132C]/25 via-transparent to-transparent"
-        aria-hidden="true"
-      />
-    </div>
-  );
-}
-
-function HeroGrowthVisual() {
-  return <HeroPhoto src="/assets/hero%202.jpeg" alt="Croissance numérique et progression des performances" />;
-}
-
-function HeroAgilityVisual() {
-  return <HeroPhoto src="/assets/hero%203.png" alt="Innovation digitale et outils métiers connectés" />;
-}
-
 /**
  * HeroSection: Carrousel bannière principale (Spiritual-Tech Luxe + TENYSY)
  */
@@ -138,7 +126,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
 
   const indicatorColors = ['#36E2C6', '#E2A93B', '#F3C969', '#E2A93B', '#F3C969', '#36E2C6'] as const;
   const isTenysyHero = activeSlide === 0;
-  const showHeroRings = activeSlide >= 2;
+  const activeBackground = HERO_BACKGROUNDS[activeSlide];
 
   return (
     <section
@@ -147,18 +135,25 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         isTenysyHero ? 'lg:min-h-[780px]' : ''
       }`}
     >
-      {/* Halos d'arrière-plan */}
-      <div
-        className={`absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] blur-[140px] pointer-events-none transition-opacity duration-700 ${
-          isTenysyHero ? 'opacity-0' : 'opacity-100'
-        } bg-gradient-to-b from-[#E2A93B]/10 via-[#36E2C6]/5 to-transparent`}
-      />
+      {activeBackground && (
+        <div
+          key={activeBackground.src}
+          role="img"
+          aria-label={activeBackground.alt}
+          className="hero-photo-background absolute inset-0 z-0"
+          style={{ backgroundImage: `url("${activeBackground.src}")` }}
+        />
+      )}
+
+      {/* Halo TENYSY uniquement : les autres slides laissent les photos respirer. */}
       <div
         className={`absolute top-1/3 right-0 w-[520px] h-[520px] bg-[#36E2C6]/12 blur-[120px] pointer-events-none transition-opacity duration-700 ${
           isTenysyHero ? 'opacity-100' : 'opacity-0'
         }`}
       />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#13224A]/40 via-transparent to-transparent pointer-events-none" />
+      {!activeBackground && (
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#13224A]/40 via-transparent to-transparent pointer-events-none" />
+      )}
 
       {/* Cercles concentriques (hero TENYSY) */}
       <div
@@ -170,20 +165,10 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
         <div className="absolute w-[min(78vw,600px)] h-[min(78vw,600px)] rounded-full border border-white/[0.04]" />
         <div className="absolute w-[min(64vw,480px)] h-[min(64vw,480px)] rounded-full border border-[#36E2C6]/10" />
       </div>
-      <div
-        className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-700 ${
-          showHeroRings ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        <div className="w-[min(92vw,760px)] h-[min(92vw,760px)] rounded-full border border-white/[0.025]" />
-        <div className="absolute w-[min(76vw,620px)] h-[min(76vw,620px)] rounded-full border border-white/[0.025]" />
-        <div className="absolute w-[min(60vw,480px)] h-[min(60vw,480px)] rounded-full border border-white/[0.025]" />
-      </div>
-
       <div key={activeSlide} className="hero-content-enter flex-1 flex flex-col z-10">
         {activeSlide === 1 ? (
           <div className="max-w-[1380px] mx-auto px-4 sm:px-8 w-full flex-1 flex items-center">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center w-full py-4 lg:py-8">
+            <div className="w-full max-w-2xl py-4 lg:py-8">
               <div>
               <div className="inline-flex items-center gap-3 p-1 pr-4 rounded-full bg-[#13224A]/80 border border-white/10 backdrop-blur-md mb-6 shadow-sm">
                 <span className="px-3 py-1 rounded-full bg-gradient-to-r from-[#E2A93B]/30 to-[#F3C969]/10 text-[#F3C969] text-[11px] font-bold tracking-wider uppercase border border-[#E2A93B]/40">
@@ -221,15 +206,11 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
                 </a>
               </div>
               </div>
-              <div className="relative">
-                <div className="absolute -inset-5 rounded-full bg-[#087BFF]/15 blur-3xl" />
-                <HeroGrowthVisual />
-              </div>
             </div>
           </div>
         ) : activeSlide === 2 ? (
           <div className="max-w-[1380px] mx-auto px-4 sm:px-8 w-full flex-1 flex items-center">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center w-full py-4 lg:py-8">
+            <div className="w-full max-w-2xl py-4 lg:py-8">
               <div>
             <div>
               <div className="inline-flex flex-wrap items-center gap-3 p-1 pr-4 rounded-full bg-[#13224A]/80 border border-white/10 backdrop-blur-md mb-5 shadow-sm">
@@ -272,15 +253,11 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
               </div>
             </div>
               </div>
-              <div className="relative">
-                <div className="absolute -inset-5 rounded-full bg-[#159ED6]/20 blur-3xl" />
-                <HeroAgilityVisual />
-              </div>
             </div>
           </div>
         ) : activeSlide === 3 ? (
           <div className="max-w-[1380px] mx-auto px-4 sm:px-8 w-full flex-1 flex items-center">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center w-full py-4 lg:py-8">
+            <div className="w-full max-w-2xl py-4 lg:py-8">
               <div>
                 <div className="inline-flex flex-wrap items-center gap-3 p-1 pr-4 rounded-full bg-[#13224A]/80 border border-white/10 backdrop-blur-md mb-5 shadow-sm">
                   <span className="px-3 py-1 rounded-full bg-gradient-to-r from-[#E2A93B]/30 to-[#F3C969]/10 text-[#F3C969] text-[11px] font-bold tracking-wider uppercase border border-[#E2A93B]/40">
@@ -309,12 +286,11 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
                 </a>
               </div>
 
-              <HeroPhoto src="/assets/hero%204.jpg" alt="Cloud computing et infrastructure réseau" />
             </div>
           </div>
         ) : activeSlide === 4 ? (
           <div className="max-w-[1380px] mx-auto px-4 sm:px-8 w-full flex-1 flex items-center">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center w-full py-4 lg:py-8">
+            <div className="w-full max-w-2xl py-4 lg:py-8">
               <div>
               <div className="inline-flex flex-wrap items-center gap-3 p-1 pr-4 rounded-full bg-[#13224A]/80 border border-white/10 backdrop-blur-md mb-5 shadow-sm">
                 <span className="px-3 py-1 rounded-full bg-gradient-to-r from-[#E2A93B]/30 to-[#F3C969]/10 text-[#F3C969] text-[11px] font-bold tracking-wider uppercase border border-[#E2A93B]/40">
@@ -342,14 +318,11 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
               </div>
-              <div className="relative">
-                <HeroPhoto src="/assets/hero%205.jpg" alt="Réseau digital et écosystème connecté" />
-              </div>
             </div>
           </div>
         ) : activeSlide === 5 ? (
           <div className="max-w-[1380px] mx-auto px-4 sm:px-8 w-full flex-1 flex items-center">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center w-full py-4 lg:py-8">
+            <div className="w-full max-w-2xl py-4 lg:py-8">
               <div>
               <div className="inline-flex flex-wrap items-center gap-3 p-1 pr-4 rounded-full bg-[#13224A]/80 border border-white/10 backdrop-blur-md mb-5 shadow-sm">
                 <span className="px-3 py-1 rounded-full bg-gradient-to-r from-[#E2A93B]/30 to-[#F3C969]/10 text-[#F3C969] text-[11px] font-bold tracking-wider uppercase border border-[#E2A93B]/40">
@@ -376,9 +349,6 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
                 <span>Voir notre méthodologie</span>
                 <Workflow className="w-3.5 h-3.5" />
               </a>
-              </div>
-              <div className="relative">
-                <HeroPhoto src="/assets/hero%206.jpg" alt="Protection et sécurité des solutions numériques" />
               </div>
             </div>
           </div>
