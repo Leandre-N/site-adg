@@ -53,10 +53,10 @@ export default function App() {
         {/* Section À propos : Ingénierie & Leadership Digital (Plaque fondatrice & Dirigeant) */}
         <AboutSection />
 
-        {/* Section Services : Prestations Métiers (11 cartes + Bannière TENYSY ERP) */}
+        {/* Section Services : Prestations Métiers (11 cartes + présentation TENYSY) */}
         <ServicesSection onOpenQuoteModal={handleOpenQuoteModal} />
 
-        {/* Section TENYSY : Suite ERP & Console Opérationnelle Intégrée */}
+        {/* Section TENYSY : Application mobile multifonctionnelle */}
         <TenysySection onOpenQuoteModal={handleOpenQuoteModal} />
 
         {/* Section Statistiques : 4 Métriques clés d'impact */}

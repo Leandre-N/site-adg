@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
               </li>
               <li>
                 <a href="#tenysy" className="text-[#36E2C6] hover:text-white transition-colors flex items-center gap-1.5 font-semibold">
-                  <span className="text-[10px] text-[#36E2C6]">›</span> TENYSY Cloud ERP
+                  <span className="text-[10px] text-[#36E2C6]">›</span> Application mobile TENYSY
                 </a>
               </li>
               <li>

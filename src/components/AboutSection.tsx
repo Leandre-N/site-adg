@@ -53,7 +53,7 @@ export const AboutSection: React.FC = () => {
                 {/* Pied de plaque */}
                 <div className="flex items-center justify-between text-[11px] text-[#A6B4D6] border-t border-white/10 pt-4 z-10">
                   <span>Société d'ingénierie logicielle</span>
-                  <span className="font-mono text-[#36E2C6]">TENYSY CORE TECH</span>
+                  <span className="font-mono text-[#36E2C6]">PLATEFORME MOBILE TENYSY</span>
                 </div>
               </div>
 
@@ -132,8 +132,8 @@ export const AboutSection: React.FC = () => {
                   Notre Vision
                 </h3>
                 <p className="text-[14px] text-[#56627F] leading-relaxed">
-                  Bâtir des solutions logicielles souveraines, intuitives et scalables,
-                  incarnées par notre suite applicative propriétaire TENYSY.
+                  Concevoir des solutions numériques utiles et accessibles, dont TENYSY,
+                  une application mobile réunissant communication, culture et services.
                 </p>
               </div>
               </Reveal>

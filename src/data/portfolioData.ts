@@ -30,15 +30,15 @@ export const CASE_STUDIES: ProjectCaseStudy[] = [
     clientName: 'Mokalaw Firm',
     sector: 'Droit des Affaires & Contentieux',
     location: 'Douala - Bonanjo',
-    title: 'Portail Juridique Digital & Déploiement TENYSY Gestion de Dossiers',
+    title: 'Portail juridique digital & espace client sécurisé',
     summary: 'Numérisation intégrale des dossiers d’arbitrage et mise en place d’un portail client sécurisé avec signature électronique et coffre-fort documentaire chiffré.',
     impactMetrics: [
       { label: 'Gain de productivité', value: '+42%' },
       { label: 'Délai de traitement dossiers', value: '-3 jours' },
       { label: 'Disponibilité plateforme', value: '99.98%' }
     ],
-    servicesDelivered: ['Création de Sites Web & Portails', 'CRM, ERP TENYSY', 'Hébergement Web & Domaines'],
-    techStack: ['Next.js', 'PostgreSQL', 'TENYSY Cloud', 'AES-256 Encryption'],
+    servicesDelivered: ['Création de Sites Web & Portails', 'Hébergement Web & Domaines'],
+    techStack: ['Next.js', 'PostgreSQL', 'AES-256 Encryption'],
     year: '2024'
   },
   {
@@ -78,15 +78,15 @@ export const CASE_STUDIES: ProjectCaseStudy[] = [
     clientName: 'Asetah Tribe',
     sector: 'Distribution & Logistique Urbaine',
     location: 'Douala - Bassa',
-    title: 'ERP Logistique TENYSY avec Suivi des Stocks et Facturation Mobile Money',
-    summary: 'Déploiement complet de TENYSY pour l’approvisionnement de 14 points de vente à Douala et Yaoundé avec réassortiment automatique des stocks sensibles.',
+    title: 'Outils numériques pour la distribution et le suivi des stocks',
+    summary: 'Projet numérique pour accompagner l’approvisionnement et le suivi des stocks sur plusieurs points de vente à Douala et Yaoundé.',
     impactMetrics: [
       { label: 'Ruptures de stock évitées', value: '94%' },
       { label: 'Temps d’inventaire mensuel', value: 'Passé de 4j à 4h' },
       { label: 'Commandes traitées/jour', value: '350+' }
     ],
-    servicesDelivered: ['ERP & CRM TENYSY', 'Applications Mobiles', 'Formation & Conseil Pratique'],
-    techStack: ['TENYSY Core V2.4', 'Flutter', 'MTN MoMo API', 'Orange Money API'],
+    servicesDelivered: ['Outils numériques de gestion commerciale', 'Applications Mobiles', 'Formation & Conseil Pratique'],
+    techStack: ['Flutter'],
     year: '2024'
   }
 ];

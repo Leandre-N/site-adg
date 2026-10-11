@@ -14,7 +14,7 @@ export const COMPANY_INFO = {
   },
   vision: {
     title: 'Notre Vision',
-    text: 'Bâtir des solutions logicielles souveraines, intuitives et scalables, incarnées par notre suite applicative propriétaire TENYSY.'
+    text: 'Concevoir des solutions numériques utiles et accessibles, dont TENYSY, une application mobile réunissant communication, culture et services.'
   },
   address: 'Ange Raphaël, à 20 m de la Saladière, en face de THE BEST, Douala, Cameroun',
   hours: 'Lundi au vendredi, 08h00 à 17h30',
@@ -23,7 +23,7 @@ export const COMPANY_INFO = {
     { number: '+237 621 80 24 05', label: 'WhatsApp principal & Devis', isPrimary: true },
     { number: '+237 676 35 59 15', label: 'Support Technique Urgent' },
     { number: '+237 697 42 47 11', label: 'Direction Commerciale' },
-    { number: '+237 683 16 00 68', label: 'Pôle Déploiement TENYSY' }
+    { number: '+237 683 16 00 68', label: 'Pôle TENYSY' }
   ],
   stats: [
     { value: '91', label: 'Clients satisfaits', subtext: 'Accompagnés avec rigueur' },

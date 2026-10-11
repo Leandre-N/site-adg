@@ -8,7 +8,7 @@ interface BlogScreenProps {
 }
 
 export const BlogScreen: React.FC<BlogScreenProps> = ({ onBackToHome, onSelectPost }) => {
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'erp' | 'security' | 'strategy'>('all');
+  const [selectedCategory, setSelectedCategory] = useState<'all' | 'product' | 'security' | 'strategy'>('all');
   const [search, setSearch] = useState('');
 
   const filteredPosts = BLOG_POSTS.filter(post => {
@@ -45,7 +45,7 @@ export const BlogScreen: React.FC<BlogScreenProps> = ({ onBackToHome, onSelectPo
           <div className="flex flex-wrap items-center gap-2">
             {[
               { id: 'all', label: 'Toutes les publications' },
-              { id: 'erp', label: 'ERP & Logiciels SaaS' },
+              { id: 'product', label: 'Application mobile TENYSY' },
               { id: 'security', label: 'Cybersécurité' },
               { id: 'strategy', label: 'Stratégie Numérique' },
             ].map((cat) => (

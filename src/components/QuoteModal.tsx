@@ -32,7 +32,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   const servicesList = [
     'Création de Sites Web & Portails',
-    'Solution ERP TENYSY',
+    'Application mobile TENYSY',
+    'Présentation de l’application mobile TENYSY',
     'Applications Mobiles (iOS / Android)',
     'Hébergement Web & Infrastructure NVMe',
     'Maintenance de Site Web & Sécurité',

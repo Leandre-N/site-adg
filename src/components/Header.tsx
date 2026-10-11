@@ -163,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({ currentTab, onSelectTab, onOpenQ
                   <span>{link.label}</span>
                 </div>
                 {link.isSpecial && (
-                  <span className="text-[10px] px-2 py-0.5 rounded bg-[#36E2C6]/20 text-[#36E2C6] font-mono">ERP CLOUD</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-[#36E2C6]/20 text-[#36E2C6] font-mono">APP MOBILE</span>
                 )}
               </button>
             ))}

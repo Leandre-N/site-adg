@@ -120,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
                 <span>{link.label}</span>
                 {link.isProduct && (
                   <span className="text-xs px-2 py-0.5 rounded bg-[#36E2C6]/15 text-[#36E2C6] border border-[#36E2C6]/30">
-                    ERP Cloud
+                    Application mobile
                   </span>
                 )}
               </a>

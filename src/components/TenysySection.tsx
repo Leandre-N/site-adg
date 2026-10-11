@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import { Reveal } from './Reveal';
 import {
-  Zap,
-  SlidersHorizontal,
-  Users,
-  ShieldCheck,
-  Terminal,
-  Activity,
-  CheckCircle2,
-  Clock,
-  TrendingDown
+  MessageCircle,
+  BookOpen,
+  LayoutGrid,
+  QrCode,
+  Store,
+  Video,
+  KeyRound,
 } from 'lucide-react';
 
 interface TenysySectionProps {
@@ -17,7 +15,7 @@ interface TenysySectionProps {
 }
 
 /**
- * TenysySection: Présentation de la suite ERP TENYSY
+ * TenysySection: Présentation de l'application mobile TENYSY
  * Univers immersif Midnight Navy avec accents Electric Teal (#36E2C6)
  */
 export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }) => {
@@ -25,24 +23,29 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
 
   const features = [
     {
-      icon: Zap,
-      title: 'Simple dès le premier jour',
-      description: 'Prise en main immédiate sans courbe d’apprentissage fastidieuse. Interface intuitive et fluide.',
+      icon: MessageCircle,
+      title: 'Messagerie & appels',
+      description: 'Retrouvez vos conversations, échangez des messages et accédez à une interface d’appel audio et vidéo.',
     },
     {
-      icon: SlidersHorizontal,
-      title: 'Adapté à votre métier',
-      description: 'Commerce, cabinet de conseil, logistique ou prestations de service : modules configurables selon vos flux.',
+      icon: BookOpen,
+      title: 'Mémoires & Racines',
+      description: 'Explorez des rubriques autour des arts, des racines et du patrimoine culturel africain.',
     },
     {
-      icon: Users,
-      title: 'Travail en équipe',
-      description: 'Multi-utilisateurs avec gestion fine des rôles, permissions granulaires et historique des modifications en direct.',
+      icon: LayoutGrid,
+      title: 'Services & paiements',
+      description: 'Parcourez un catalogue de services et retrouvez des écrans dédiés aux montants et aux codes QR.',
     },
     {
-      icon: ShieldCheck,
-      title: 'Accompagnement Expert & Déploiement Local',
-      description: 'Intégration sur-mesure sur site à Douala, migration sécurisée de vos données et assistance technique permanente.',
+      icon: Store,
+      title: 'Ma Boutique',
+      description: 'Consultez les produits, les indicateurs présentés et les informations liées aux ventes.',
+    },
+    {
+      icon: KeyRound,
+      title: 'Connexion & Mon Compte',
+      description: 'Accédez au parcours de connexion et de vérification, puis retrouvez votre profil et les options du compte.',
     },
   ];
 
@@ -60,7 +63,7 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
         <div>
           <div className="inline-flex items-center gap-2 mb-4">
             <span className="px-2.5 py-1 rounded-full bg-[#36E2C6]/15 text-[#36E2C6] border border-[#36E2C6]/30 font-bold text-[11px] tracking-wider uppercase">
-              NOUVEAU PROJET
+              APPLICATION MOBILE
             </span>
             <span className="px-2.5 py-1 rounded-full bg-[#E2A93B]/20 text-[#F3C969] border border-[#E2A93B]/30 font-bold text-[11px] tracking-wider uppercase">
               PHARE
@@ -68,11 +71,12 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
           </div>
 
           <h2 className="font-['Bricolage_Grotesque'] text-[32px] sm:text-[42px] lg:text-[48px] font-[800] text-white tracking-tight leading-[1.15]">
-            TENYSY, pensé pour faire avancer votre activité
+              TENYSY réunit vos usages dans une seule application
           </h2>
 
           <p className="text-[16px] sm:text-[18px] text-[#A6B4D6] mt-4 leading-relaxed font-normal">
-            Une application centrale et limpide qui soulage la complexité administrative pour vous permettre d'accélérer vos ventes.
+            De la messagerie aux espaces culturels, des services à la boutique : TENYSY rassemble plusieurs expériences
+            dans une interface mobile organisée autour de vos besoins.
           </p>
         </div>
         </Reveal>
@@ -104,7 +108,7 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
             })}
           </div>
 
-          {/* COLONNE DROITE: Simulation Console Opérationnelle TENYSY */}
+          {/* COLONNE DROITE: aperçu des espaces TENYSY */}
           <Reveal className="lg:col-span-7">
           <div className="flex h-full flex-col">
             <div className="rounded-2xl bg-[#0E1B34] border border-[#36E2C6]/30 shadow-[0_16px_48px_rgba(0,0,0,0.5)] p-6 sm:p-8 flex flex-col justify-between h-full relative overflow-hidden">
@@ -118,78 +122,76 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#36E2C6] animate-pulse" />
                     <span className="font-['Bricolage_Grotesque'] text-[13px] font-bold uppercase tracking-wider text-white">
-                      Aperçu du Tableau de Bord Opérationnel
+                      Les espaces de l’application
                     </span>
                   </div>
                   <span className="font-mono text-[11px] text-[#36E2C6] bg-[#36E2C6]/10 px-2.5 py-0.5 rounded border border-[#36E2C6]/20">
-                    TENYSY CORE V2.4
+                    TENYSY MOBILE
                   </span>
                 </div>
 
                 <p className="text-[14px] text-[#C6C6CE] leading-relaxed mb-6">
-                  Connectez tous vos collaborateurs sans délai : saisie des commandes en 3 clics, facturation instantanée et relances automatiques configurées sans expertise technique préalable.
+                  La navigation donne accès à un espace principal, à la messagerie, aux Mémoires, aux Services et au compte utilisateur. Des écrans de boutique, de paiement et d’appel apparaissent également dans la démonstration.
                 </p>
 
-                {/* Blocs métriques intégrés */}
+                {/* Modules observés dans la démonstration */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                  
-                  {/* Métrique 1 */}
                   <div className="motion-card p-4 rounded-xl bg-[#091326] border border-white/8">
-                    <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
-                      <Clock className="w-3.5 h-3.5 text-[#36E2C6]" />
-                      <span>Temps de déploiement moyen</span>
+                    <div className="flex items-center gap-2 text-[#36E2C6] text-sm font-semibold mb-2">
+                      <MessageCircle className="w-4 h-4" />
+                      Messagerie &amp; appels
                     </div>
-                    <div className="font-['Bricolage_Grotesque'] text-[20px] font-bold text-white">
-                      Moins de 48h
-                    </div>
-                    <div className="text-[11px] text-[#36E2C6] mt-0.5">
-                      Formation incluse de vos équipes
-                    </div>
+                    <p className="text-xs text-slate-400">Conversations, rédaction de messages et interface d’appel audio/vidéo.</p>
                   </div>
-
-                  {/* Métrique 2 */}
                   <div className="motion-card p-4 rounded-xl bg-[#091326] border border-white/8">
-                    <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
-                      <TrendingDown className="w-3.5 h-3.5 text-[#E2A93B]" />
-                      <span>Temps administratif économisé</span>
+                    <div className="flex items-center gap-2 text-[#F3C969] text-sm font-semibold mb-2">
+                      <BookOpen className="w-4 h-4" />
+                      Mémoires &amp; Racines
                     </div>
-                    <div className="font-['Bricolage_Grotesque'] text-[20px] font-bold text-[#36E2C6]">
-                      -65% d'efforts
+                    <p className="text-xs text-slate-400">Rubriques de découverte consacrées aux arts, aux racines et au patrimoine africain.</p>
+                  </div>
+                  <div className="motion-card p-4 rounded-xl bg-[#091326] border border-white/8">
+                    <div className="flex items-center gap-2 text-[#36E2C6] text-sm font-semibold mb-2">
+                      <QrCode className="w-4 h-4" />
+                      Services &amp; paiements
                     </div>
-                    <div className="text-[11px] text-slate-400 mt-0.5">
-                      Automatisation des saisies redondantes
+                    <p className="text-xs text-slate-400">Catalogue de services et écrans avec montant et code QR ; les modalités restent à confirmer.</p>
+                  </div>
+                  <div className="motion-card p-4 rounded-xl bg-[#091326] border border-white/8">
+                    <div className="flex items-center gap-2 text-[#F3C969] text-sm font-semibold mb-2">
+                      <Store className="w-4 h-4" />
+                      Boutique &amp; compte
                     </div>
+                    <p className="text-xs text-slate-400">Produits et indicateurs présentés dans l’espace boutique.</p>
+                  </div>
+                  <div className="motion-card p-4 rounded-xl bg-[#091326] border border-white/8">
+                    <div className="flex items-center gap-2 text-[#36E2C6] text-sm font-semibold mb-2">
+                      <KeyRound className="w-4 h-4" />
+                      Connexion &amp; compte
+                    </div>
+                    <p className="text-xs text-slate-400">Parcours de connexion et vérification, profil et options du compte utilisateur.</p>
                   </div>
                 </div>
-
-                {/* Console logs en direct */}
-                <div className="bg-[#050C1B] rounded-xl p-4 border border-white/8 font-mono text-[12px] space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-[#36E2C6]">
-                    <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                    <span>[TENYSY Sync] 14 factures générées et transmises aux clients</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-[#F3C969]">
-                    <Activity className="w-3.5 h-3.5 shrink-0" />
-                    <span>[Alerte Stock] 2 références réapprovisionnées automatiquement</span>
-                  </div>
+                <div className="rounded-xl border border-white/8 bg-[#050C1B] p-4 text-xs leading-relaxed text-slate-400">
+                  Les écrans visibles présentent les parcours et espaces de l’application. Les moyens de paiement, l’envoi des codes et le fonctionnement complet des appels restent à vérifier.
                 </div>
               </div>
 
               {/* Pied de la console avec CTA */}
               <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-2 text-[12px] text-slate-300">
-                  <ShieldCheck className="w-4 h-4 text-[#36E2C6]" />
-                  <span>Déploiement local sécurisé à Douala</span>
+                  <Video className="w-4 h-4 text-[#36E2C6]" />
+                  <span>Présentation des fonctionnalités TENYSY</span>
                 </div>
 
                 <button
                   onClick={() => {
                     setDemoRequested(true);
-                    onOpenQuoteModal('Démonstration Live TENYSY ERP');
+                    onOpenQuoteModal('Présentation de l’application mobile TENYSY');
                   }}
                   className="px-5 py-2.5 rounded-xl bg-[#36E2C6] hover:bg-[#28C7AD] text-[#05132C] font-bold text-[13px] shadow-[0_4px_16px_rgba(54,226,198,0.25)] transition-all cursor-pointer"
                 >
-                  {demoRequested ? 'Demande envoyée ✓' : 'Demander une démonstration'}
+                  {demoRequested ? 'Demande envoyée ✓' : 'En savoir plus sur TENYSY'}
                 </button>
               </div>
 

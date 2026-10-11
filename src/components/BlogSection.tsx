@@ -38,7 +38,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onSelectPost, onViewAl
         {/* 2 Featured Article Cards (Matching Screenshot) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {BLOG_POSTS.slice(0, 2).map((post) => {
-            const isErp = post.categoryType === 'erp';
+            const isProduct = post.categoryType === 'product';
 
             return (
               <div
@@ -50,7 +50,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onSelectPost, onViewAl
                   <div className="flex flex-wrap items-center gap-3 mb-4">
                     <span
                       className={`px-3 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider font-mono ${
-                        isErp 
+                        isProduct
                           ? 'bg-[#36E2C6]/15 text-[#007A69]' 
                           : 'bg-[#E2A93B]/20 text-[#986E18]'
                       }`}

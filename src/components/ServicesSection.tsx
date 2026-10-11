@@ -22,7 +22,7 @@ interface ServicesSectionProps {
 
 /**
  * ServicesSection: Catalogue complet des prestations d'excellence métier
- * Grille de 11 cartes de services + Bannière d'envergure TENYSY ERP
+ * Grille de 11 cartes de services + bannière de présentation TENYSY
  */
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuoteModal }) => {
   const services = [
@@ -205,7 +205,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuoteMod
           })}
         </div>
 
-        {/* GRANDE BANNIÈRE SUITE ERP TENYSY */}
+        {/* Présentation de l’application mobile TENYSY */}
         <Reveal className="mt-14" delay={120}>
         <div className="motion-card rounded-2xl p-8 sm:p-10 bg-gradient-to-r from-[#071329] via-[#0E1E40] to-[#0A1733] border border-white/15 text-white shadow-[0_16px_40px_rgba(7,19,41,0.35)] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#36E2C6]/10 rounded-full blur-3xl pointer-events-none" />
@@ -214,19 +214,19 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuoteMod
             <div className="max-w-3xl space-y-3">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#36E2C6] bg-[#36E2C6]/15 px-3 py-1 rounded-full border border-[#36E2C6]/30">
-                  PROPULSÉ PAR TENYSY
+                  À DÉCOUVRIR : TENYSY
                 </span>
                 <span className="text-[12px] text-[#9AA7C7] font-medium">
-                  Solution Entreprise Intégrée
+                  Application mobile multifonctionnelle
                 </span>
               </div>
 
               <h3 className="font-['Bricolage_Grotesque'] text-[24px] sm:text-[32px] font-[800] text-white tracking-tight leading-tight">
-                CRM, ERP et Solutions Informatiques Métier
+                Une application pour communiquer, découvrir et accéder à des services
               </h3>
 
               <p className="text-[14px] sm:text-[16px] text-[#C6C6CE] leading-relaxed">
-                Fédérez l'ensemble de vos processus de gestion financière, stocks, ressources humaines et relation client sous une interface unifiée ultra-rapide.
+                TENYSY rassemble une messagerie avec une interface d’appel, des espaces dédiés aux Mémoires et aux Racines, un catalogue de services, des écrans liés aux paiements, une boutique et un espace de compte.
               </p>
             </div>
 
@@ -235,12 +235,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenQuoteMod
                 href="#tenysy"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#36E2C6] hover:bg-[#2DD0B5] text-[#071329] font-bold text-[14px] shadow-[0_4px_20px_rgba(54,226,198,0.30)] hover:shadow-[0_8px_24px_rgba(54,226,198,0.45)] transition-all cursor-pointer"
               >
-                <span>Découvrir la suite TENYSY</span>
+                <span>Explorer les espaces TENYSY</span>
                 <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
               </a>
 
               <button
-                onClick={() => onOpenQuoteModal('Solution ERP TENYSY')}
+                onClick={() => onOpenQuoteModal('Présentation de l’application mobile TENYSY')}
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-[14px] border border-white/20 transition-all cursor-pointer"
               >
                 <span>Obtenir un devis</span>

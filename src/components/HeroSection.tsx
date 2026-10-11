@@ -11,6 +11,9 @@ import {
   Network,
   Workflow,
   Sparkles,
+  BookOpen,
+  Store,
+  UserRound,
 } from 'lucide-react';
 
 const HERO_SWAP_MS = 5000;
@@ -32,7 +35,7 @@ function HeroTenysyPhoneMockup() {
   return (
     <div
       role="img"
-      aria-label="Maquette mobile TENESY, expérience simple et intuitive, bientôt disponible"
+      aria-label="Maquette mobile TENYSY, application regroupant messagerie, culture, services, boutique et compte"
       className="relative mx-auto flex h-[440px] w-full max-w-[560px] items-center justify-center overflow-hidden sm:h-[520px] lg:mx-0 lg:ml-auto"
       style={{
         backgroundImage:
@@ -51,23 +54,34 @@ function HeroTenysyPhoneMockup() {
             T<span className="text-[#E2A93B]">.</span>
           </span>
 
-          <div className="absolute inset-x-6 top-[45%] -translate-y-1/2">
+          <div className="absolute inset-x-6 top-[39%] -translate-y-1/2">
             <p className="mb-3 font-mono text-[8px] font-bold uppercase tracking-[0.18em] text-[#A88B5D]">
-              Bienvenue dans
+                  Une application, plusieurs espaces
             </p>
             <p className="font-['Bricolage_Grotesque'] text-[38px] font-extrabold tracking-[-0.06em] text-white sm:text-[46px]">
-              TENESY
+              TENYSY
             </p>
-            <p className="mt-1 text-[10px] font-medium text-[#8794A0]">L&apos;expérience arrive bientôt.</p>
+                <p className="mt-1 text-[10px] font-medium text-[#8794A0]">Échanges, culture &amp; services.</p>
+                <div className="mt-5 grid grid-cols-2 gap-2">
+                  <div className="rounded-lg border border-white/10 bg-white/[0.04] p-2 text-[8px] text-[#D8E2FF]">
+                    <MessageSquare className="mb-1 h-3 w-3 text-[#36E2C6]" />Messagerie
+                  </div>
+                  <div className="rounded-lg border border-white/10 bg-white/[0.04] p-2 text-[8px] text-[#D8E2FF]">
+                    <BookOpen className="mb-1 h-3 w-3 text-[#F3C969]" />Mémoires &amp; Racines
+                  </div>
+                  <div className="rounded-lg border border-white/10 bg-white/[0.04] p-2 text-[8px] text-[#D8E2FF]">
+                    <Store className="mb-1 h-3 w-3 text-[#36E2C6]" />Ma Boutique
+                  </div>
+                  <div className="rounded-lg border border-white/10 bg-white/[0.04] p-2 text-[8px] text-[#D8E2FF]">
+                    <UserRound className="mb-1 h-3 w-3 text-[#F3C969]" />Mon Compte
+                  </div>
+                </div>
           </div>
 
           <div className="absolute inset-x-6 bottom-7">
-            <div className="mb-3 h-[2px] w-full bg-white/10">
-              <div className="h-full w-1/2 bg-[#E2A93B]" />
-            </div>
             <div className="flex items-center gap-2 font-mono text-[8px] font-semibold uppercase tracking-wider text-[#697883]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#E2A93B]" />
-              En développement
+              Application mobile
             </div>
           </div>
         </div>
@@ -359,22 +373,21 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
                 <div className="inline-flex flex-wrap items-center gap-3 p-1 pr-4 rounded-full bg-[#13224A]/80 border border-white/10 backdrop-blur-md mb-6 shadow-sm">
                   <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#36E2C6]/10 text-[#36E2C6] text-[11px] font-bold tracking-wider uppercase border border-[#36E2C6]/35">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#36E2C6] shadow-[0_0_8px_#36E2C6]" aria-hidden />
-                    NOUVEAU PROJET
+                    APPLICATION MOBILE
                   </span>
                   <span className="text-xs italic text-[#C6C6CE] font-light">
-                    Solution SaaS Dédiée Cameroun
+                    Une plateforme, plusieurs usages
                   </span>
                 </div>
 
                 <h1 className="font-['Bricolage_Grotesque'] text-[34px] sm:text-[44px] md:text-[52px] lg:text-[56px] font-[800] text-white tracking-tight leading-[1.12] max-w-xl text-balance">
-                  Découvrez{' '}
-                  <span className="text-[#36E2C6] drop-shadow-[0_0_24px_rgba(54,226,198,0.35)]">TENYSY</span>, le
-                  nouveau projet des Anges du Digital
+                  <span className="text-[#36E2C6] drop-shadow-[0_0_24px_rgba(54,226,198,0.35)]">TENYSY</span>,
+                  l&apos;application qui réunit échanges, culture et services
                 </h1>
 
                 <p className="mt-5 text-[16px] sm:text-[18px] text-[#A6B4D6] max-w-lg leading-relaxed">
-                  Une seule solution pour gérer votre activité au quotidien, pensée pour la productivité totale des
-                  entreprises et des indépendants du Cameroun.
+                  Échangez par messagerie, explorez les espaces Mémoires et Racines, découvrez des services et retrouvez
+                  votre boutique ainsi que la gestion de votre compte dans une même expérience mobile.
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center gap-4">

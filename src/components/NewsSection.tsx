@@ -10,13 +10,13 @@ import { Reveal } from './Reveal';
 export const NewsSection: React.FC = () => {
   const articles: ArticleItem[] = [
     {
-      id: 'erp-afrique',
-      category: 'ERP & SAAS',
+      id: 'application-mobile-tenysy',
+      category: 'APPLICATION MOBILE',
       date: '14 Octobre 2024',
       readTime: 'Lecture 4 min',
-      title: "Déploiement de TENYSY dans les PME d'Afrique Centrale",
+      title: 'TENYSY : une application mobile aux espaces multiples',
       excerpt:
-        "Comment la convergence d'une solution de gestion sans friction libère le potentiel des structures camerounaises face aux défis de connectivité et de réconciliation bancaire.",
+        'Messagerie, culture, services, boutique et compte utilisateur : découvrez les espaces visibles dans la démonstration de TENYSY.',
       author: "Par l'Équipe TENYSY",
       accentColor: 'teal',
     },
