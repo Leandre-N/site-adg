@@ -12,8 +12,8 @@ export const NewsSection: React.FC = () => {
     {
       id: 'application-mobile-tenysy',
       category: 'APPLICATION MOBILE',
-      date: '14 Octobre 2024',
-      readTime: 'Lecture 4 min',
+      date: 'Présentation',
+      readTime: 'Lecture 3 min',
       title: 'TENYSY : une application mobile aux espaces multiples',
       excerpt:
         'Messagerie, culture, services, boutique et compte utilisateur : découvrez les espaces visibles dans la démonstration de TENYSY.',
@@ -23,11 +23,11 @@ export const NewsSection: React.FC = () => {
     {
       id: 'cloud-security-douala',
       category: 'CYBERSÉCURITÉ',
-      date: '28 Septembre 2024',
-      readTime: 'Lecture 5 min',
-      title: "Sécurisation des architectures cloud d'entreprise à Douala",
+      date: 'Conseils pratiques',
+      readTime: 'Lecture 3 min',
+      title: 'Quelques gestes utiles pour la sécurité numérique',
       excerpt:
-        "Analyse exhaustive des vecteurs d'attaques locaux et mise en place de stratégies de sauvegarde redondantes sur sites distants pour garantir une reprise d'activité en temps record.",
+        'Des principes simples pour mieux protéger les comptes, les appareils et les données de votre organisation.',
       author: 'Par Sylvain TEUTSING',
       accentColor: 'gold',
     },
@@ -49,7 +49,7 @@ export const NewsSection: React.FC = () => {
           </div>
 
           <a
-            href="#actualites"
+            href="/news"
             className="inline-flex items-center gap-1.5 text-[14px] font-bold text-[#B58017] hover:text-[#8D610B] transition-colors"
           >
             <span>Toutes les publications</span>
@@ -64,7 +64,7 @@ export const NewsSection: React.FC = () => {
 
             return (
               <Reveal key={article.id} delay={index * 110} className="h-full">
-              <article className="motion-card h-full bg-[#FFFFFF] rounded-2xl p-8 border border-slate-200 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-200 flex flex-col justify-between relative group">
+              <a href="/news" className="motion-card h-full bg-[#FFFFFF] rounded-2xl p-8 border border-slate-200 shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-200 flex flex-col justify-between relative group">
                 {/* Ligne d'accent supérieure */}
                 <div
                   className={`absolute top-0 left-8 right-8 h-1 rounded-t-full ${
@@ -120,7 +120,7 @@ export const NewsSection: React.FC = () => {
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
-              </article>
+              </a>
               </Reveal>
             );
           })}

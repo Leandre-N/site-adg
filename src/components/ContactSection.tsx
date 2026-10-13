@@ -11,12 +11,7 @@ interface ContactSectionProps {
  * Présente les 4 lignes téléphoniques camerounaises, l'email officiel et le siège à Douala
  */
 export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenQuoteModal }) => {
-  const phoneNumbers = [
-    { number: '+237 621 80 24 05', label: '(WhatsApp principal)', isPrimary: true },
-    { number: '+237 676 35 59 15' },
-    { number: '+237 697 42 47 11' },
-    { number: '+237 683 16 00 68' },
-  ];
+  const phoneNumbers = [{ number: '+237 676 35 59 15', label: '(Téléphone officiel)' }];
 
   return (
     <section id="contact" className="bg-[#05132C] text-white py-20 lg:py-28 px-4 sm:px-8 border-b border-white/10 relative overflow-hidden">
@@ -42,7 +37,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenQuoteModal
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 shrink-0">
             <a
-              href="https://wa.me/237621802405?text=Bonjour%20Les%20Anges%20du%20Digital,%20je%20souhaite%20obtenir%20un%20devis"
+              href="https://wa.me/237676355915?text=Bonjour%20Les%20Anges%20du%20Digital,%20je%20souhaite%20obtenir%20un%20devis"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-gradient-to-r from-[#E2A93B] to-[#F3C969] text-[#0B1530] font-bold text-[14px] shadow-[0_4px_24px_rgba(226,169,59,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
@@ -52,7 +47,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenQuoteModal
             </a>
 
             <a
-              href="tel:+237621802405"
+              href="tel:+237676355915"
               className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-[#0E1B34] hover:bg-[#13224A] text-white font-semibold text-[14px] border border-white/15 transition-all shadow-sm"
             >
               <Phone className="w-4 h-4 text-[#36E2C6]" />
@@ -96,7 +91,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenQuoteModal
             </div>
 
             <div className="pt-6 mt-6 border-t border-white/10 text-[12px] text-slate-400">
-              Assistance vocale &amp; WhatsApp 7j/7
+              Téléphone et WhatsApp : +237 676 35 59 15
             </div>
           </div>
           </Reveal>
@@ -121,7 +116,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenQuoteModal
               </a>
 
               <p className="text-[14px] text-[#A6B4D6] mt-4 leading-relaxed">
-                Réponse sous 24h ouvrées par un ingénieur d'affaires attitré.
+                Écrivez-nous pour présenter votre demande et convenir des prochaines étapes.
               </p>
             </div>
 
@@ -149,7 +144,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenQuoteModal
               </h3>
 
               <p className="text-[14.5px] text-[#D8E2FF] leading-relaxed">
-                Ange Raphaël, à 20 m de la Saladière, en face de THE BEST,
+                Carrefour près d’Ange Raphaël, à côté de la Saladière, en face de THE BEST,
               </p>
               <p className="text-[14px] font-bold text-[#E2A93B] mt-1">
                 Douala, Cameroun
@@ -157,7 +152,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenQuoteModal
             </div>
 
             <div className="pt-6 mt-6 border-t border-white/10 text-[12px] text-slate-400">
-              Bureaux ouverts du lundi au vendredi (08h00 - 17h30)
+              <a href="https://maps.app.goo.gl/BCdLMBYbAypVBzvg7" target="_blank" rel="noreferrer" className="text-[#36E2C6] hover:underline">Ouvrir l’itinéraire sur Google Maps</a>
+              <br />Bureaux ouverts du lundi au vendredi (08h00 - 17h30)
             </div>
           </div>
           </Reveal>

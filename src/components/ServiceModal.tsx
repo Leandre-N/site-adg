@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Check, ArrowRight, Clock, Layers, ShieldCheck } from 'lucide-react';
+import { X, Check, ArrowRight } from 'lucide-react';
 import { ServiceItem } from '../data/servicesData.ts';
 
 interface ServiceModalProps {
@@ -23,7 +23,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({
         <div className="p-6 border-b border-white/10 flex items-center justify-between bg-gradient-to-r from-[#101E3D] to-[#0B1530]">
           <div>
             <span className="text-[10px] uppercase font-bold tracking-widest text-[#E2A93B] block mb-1">
-              FICHE TECHNIQUE PRESTATION
+              DÉTAIL DU SERVICE
             </span>
             <h3 className="font-display text-xl sm:text-2xl font-bold text-white">
               {service.title}
@@ -52,7 +52,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({
           {/* Deliverables list */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#E2A93B] mb-3">
-              Livrables & Engagements Contractuels
+              Exemples d’accompagnement — à préciser selon votre besoin
             </h4>
             <div className="space-y-2">
               {service.deliverables.map((item, idx) => (
@@ -64,31 +64,9 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({
             </div>
           </div>
 
-          {/* Tech Stack & Execution Delay */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            <div className="p-4 rounded-xl bg-[#13224A]/40 border border-white/5">
-              <div className="text-[11px] text-slate-400 uppercase font-mono mb-2">
-                Technologies Employées
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {service.techStack.map((tech, idx) => (
-                  <span key={idx} className="px-2 py-0.5 rounded bg-white/5 text-xs text-[#36E2C6] font-mono">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="p-4 rounded-xl bg-[#13224A]/40 border border-white/5">
-              <div className="text-[11px] text-slate-400 uppercase font-mono mb-2">
-                Délai Moyen d'Exécution
-              </div>
-              <div className="text-sm font-semibold text-white flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#E2A93B]" />
-                <span>{service.duration}</span>
-              </div>
-            </div>
-          </div>
+          <p className="rounded-xl border border-white/5 bg-[#13224A]/40 p-4 text-xs leading-relaxed text-slate-400">
+            Le contenu, les délais et les conditions sont précisés après échange et repris dans une proposition dédiée.
+          </p>
         </div>
 
         {/* Footer actions */}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X, Send, CheckCircle2, MessageCircle, Building2, User, Phone, Mail, FileText } from 'lucide-react';
 
 interface QuoteModalProps {
@@ -28,12 +28,23 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    if (isOpen) {
+      setSubmitted(false);
+      setFormData((current) => ({
+        ...current,
+        service: preselectedService || 'Création de Sites Web & Portails',
+      }));
+    }
+  }, [isOpen, preselectedService]);
+
   if (!isOpen) return null;
 
   const servicesList = [
     'Création de Sites Web & Portails',
     'Application mobile TENYSY',
     'Présentation de l’application mobile TENYSY',
+    'Applications Mobiles',
     'Applications Mobiles (iOS / Android)',
     'Hébergement Web & Infrastructure NVMe',
     'Maintenance de Site Web & Sécurité',
@@ -43,19 +54,21 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     'Gestion de Projet Digital',
     'Formation & Conseil Pratique',
     'Réseau Informatique & Câblage',
-    'Support & Infogérance avec SLA',
+    'Support & Infogérance',
   ];
+  const serviceOptions = Array.from(new Set([...(preselectedService ? [preselectedService] : []), ...servicesList]));
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    handleWhatsAppRedirect();
     setSubmitted(true);
   };
 
   const handleWhatsAppRedirect = () => {
     const text = encodeURIComponent(
-      `Bonjour Les Anges du Digital,\n\nJe sollicite un devis pour mon projet :\n- Nom : ${formData.fullName}\n- Entreprise : ${formData.company}\n- Service : ${formData.service}\n- Téléphone : ${formData.phone}\n- Détails : ${formData.projectScope || 'Non spécifié'}`
+      `Bonjour Les Anges du Digital,\n\nJe souhaite discuter de mon besoin :\n- Nom : ${formData.fullName}\n- Entreprise : ${formData.company}\n- Service : ${formData.service}\n- Téléphone : ${formData.phone}\n- Email : ${formData.email}\n- Détails : ${formData.projectScope || 'Non spécifié'}`
     );
-    window.open(`https://wa.me/237621802405?text=${text}`, '_blank');
+    window.open(`https://wa.me/237676355915?text=${text}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -84,7 +97,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 Obtenir un devis personnalisé
               </h3>
               <p className="text-[13.5px] text-[#A6B4D6] mt-1.5 leading-relaxed">
-                Nos ingénieurs basés à Douala analysent vos besoins techniques sous 24h ouvrées.
+                Décrivez votre besoin : nous préparerons un message récapitulatif à envoyer à l’agence via WhatsApp.
               </p>
             </div>
 
@@ -175,7 +188,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                   className="w-full bg-[#0B1530] border border-white/15 focus:border-[#E2A93B] focus:ring-2 focus:ring-[#E2A93B]/20 rounded-xl px-4 py-3 text-[14px] text-white outline-none transition-all cursor-pointer"
                 >
-                  {servicesList.map((srv, idx) => (
+                  {serviceOptions.map((srv, idx) => (
                     <option key={idx} value={srv} className="bg-[#0B1530] text-white">
                       {srv}
                     </option>
@@ -232,7 +245,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
             </h3>
 
             <p className="text-[14px] text-[#A6B4D6] max-w-md mx-auto leading-relaxed">
-              Merci <strong className="text-white">{formData.fullName}</strong>. Votre demande relative à <strong className="text-[#F3C969]">{formData.service}</strong> a bien été transmise à notre bureau d'études à Douala.
+              Merci <strong className="text-white">{formData.fullName}</strong>. Votre message WhatsApp est prêt à être envoyé au sujet de <strong className="text-[#F3C969]">{formData.service}</strong>. Vérifiez l’envoi dans WhatsApp.
             </p>
 
             <div className="pt-4 flex flex-wrap justify-center gap-3">

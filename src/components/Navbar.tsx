@@ -15,21 +15,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Accueil', href: '#hero', active: true },
-    { label: 'À propos', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'TENYSY', href: '#tenysy', isProduct: true },
-    { label: 'Projets', href: '#process' },
-    { label: 'Actualités', href: '#actualites' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Accueil', href: '/' },
+    { label: 'À propos', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'TENYSY', href: '/tenysy', isProduct: true },
+    { label: 'Projets', href: '/projects' },
+    { label: 'Actualités', href: '/news' },
+    { label: 'Contact', href: '/contact' },
   ];
+  const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
 
   return (
     <header className="sticky top-0 z-40 bg-[#05132C]/95 backdrop-blur-md border-b border-white/8 transition-all">
       <div className="max-w-[1380px] mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
         
         {/* LOGO: Les Anges du Digital - Excellence Numérique */}
-        <a href="#hero" className="flex items-center gap-3 group focus:outline-none">
+        <a href="/" className="flex items-center gap-3 group focus:outline-none">
           <BrandLogo className="h-14 w-14 rounded-xl transition-transform group-hover:scale-105" />
 
           <div className="flex flex-col">
@@ -47,11 +48,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
         {/* NAVIGATION DESKTOP */}
         <nav className="hidden lg:flex items-center gap-7 text-[14px] font-medium text-[#C6C6CE]">
           {navLinks.map((link) => (
-            <a
+              <a
               key={link.label}
               href={link.href}
               className={`relative transition-colors duration-200 py-1 flex items-center gap-1.5 ${
-                link.active
+                currentPath === link.href
                   ? 'text-[#F3C969] font-semibold'
                   : 'hover:text-white'
               }`}
@@ -64,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
               ) : (
                 <>
                   {link.label}
-                  {link.active && (
+                  {currentPath === link.href && (
                     <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#E2A93B] rounded-full" />
                   )}
                 </>
@@ -109,12 +110,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuoteModal }) => {
         <div className="lg:hidden bg-[#0B1530] border-b border-white/10 px-6 py-6 space-y-4">
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
-              <a
+                <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`py-2 text-base font-medium flex items-center justify-between ${
-                  link.active ? 'text-[#E2A93B] font-bold' : 'text-slate-300 hover:text-white'
+                  currentPath === link.href ? 'text-[#E2A93B] font-bold' : 'text-slate-300 hover:text-white'
                 }`}
               >
                 <span>{link.label}</span>

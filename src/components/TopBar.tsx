@@ -13,7 +13,7 @@ export const TopBar: React.FC = () => {
         <div className="flex flex-wrap items-center gap-x-6 gap-y-1">
           <div className="flex items-center gap-1.5 hover:text-white transition-colors">
             <MapPin className="w-3.5 h-3.5 text-[#E2A93B] shrink-0" />
-            <span>Ange Raphaël, à 20 m de la Saladière, en face de THE BEST, Douala</span>
+            <a href="https://maps.app.goo.gl/BCdLMBYbAypVBzvg7" target="_blank" rel="noreferrer" className="hover:text-white hover:underline">Carrefour près d’Ange Raphaël, à côté de la Saladière, en face de THE BEST, Douala</a>
           </div>
           <div className="hidden md:flex items-center gap-1.5">
             <Clock className="w-3.5 h-3.5 text-[#E2A93B] shrink-0" />
@@ -32,14 +32,14 @@ export const TopBar: React.FC = () => {
           </a>
           <div className="hidden sm:flex items-center gap-2 pl-2 border-l border-white/10 text-slate-400">
             <a
-              href="#contact"
-              aria-label="Portail global"
+              href="/contact"
+              aria-label="Voir les coordonnées et nous contacter"
               className="p-1 hover:text-white hover:bg-white/5 rounded transition-colors"
             >
               <Globe className="w-3.5 h-3.5" />
             </a>
             <a
-              href="https://wa.me/237621802405"
+              href="https://wa.me/237676355915"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp direct"

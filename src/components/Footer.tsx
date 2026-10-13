@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Mail, Clock, ArrowRight } from 'lucide-react';
+import { MapPin, Mail, Clock, ArrowRight, Facebook, Linkedin, Youtube } from 'lucide-react';
 import { BrandLogo } from './BrandLogo';
 
 interface FooterProps {
@@ -52,6 +52,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
                 <span>Lundi au vendredi : 08h00 – 17h30</span>
               </div>
             </div>
+            <div className="flex items-center gap-2 pt-1" aria-label="Réseaux sociaux officiels">
+              <a href="https://web.facebook.com/lesangesdudigital" target="_blank" rel="noreferrer" aria-label="Facebook Les Anges du Digital" className="rounded-lg border border-white/10 p-2 text-[#A6B4D6] transition-colors hover:border-[#36E2C6]/40 hover:text-[#36E2C6]"><Facebook className="h-4 w-4" /></a>
+              <a href="https://www.linkedin.com/company/lesangesdudigital" target="_blank" rel="noreferrer" aria-label="LinkedIn Les Anges du Digital" className="rounded-lg border border-white/10 p-2 text-[#A6B4D6] transition-colors hover:border-[#36E2C6]/40 hover:text-[#36E2C6]"><Linkedin className="h-4 w-4" /></a>
+              <a href="https://www.youtube.com/@LESANGESDUDIGITAL" target="_blank" rel="noreferrer" aria-label="YouTube Les Anges du Digital" className="rounded-lg border border-white/10 p-2 text-[#A6B4D6] transition-colors hover:border-[#36E2C6]/40 hover:text-[#36E2C6]"><Youtube className="h-4 w-4" /></a>
+            </div>
           </div>
 
           {/* Colonne 2 : Navigation */}
@@ -61,32 +66,32 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
             </h4>
             <ul className="space-y-2 text-[13.5px]">
               <li>
-                <a href="#hero" className="hover:text-[#F3C969] transition-colors flex items-center gap-1.5">
+                <a href="/" className="hover:text-[#F3C969] transition-colors flex items-center gap-1.5">
                   <span className="text-[10px] text-[#E2A93B]">›</span> Accueil
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[#F3C969] transition-colors flex items-center gap-1.5">
+                <a href="/about" className="hover:text-[#F3C969] transition-colors flex items-center gap-1.5">
                   <span className="text-[10px] text-[#E2A93B]">›</span> À propos
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-[#F3C969] transition-colors flex items-center gap-1.5">
+                <a href="/services" className="hover:text-[#F3C969] transition-colors flex items-center gap-1.5">
                   <span className="text-[10px] text-[#E2A93B]">›</span> Services Métiers
                 </a>
               </li>
               <li>
-                <a href="#tenysy" className="text-[#36E2C6] hover:text-white transition-colors flex items-center gap-1.5 font-semibold">
+                <a href="/tenysy" className="text-[#36E2C6] hover:text-white transition-colors flex items-center gap-1.5 font-semibold">
                   <span className="text-[10px] text-[#36E2C6]">›</span> Application mobile TENYSY
                 </a>
               </li>
               <li>
-                <a href="#process" className="hover:text-[#F3C969] transition-colors flex items-center gap-1.5">
+                <a href="/projects" className="hover:text-[#F3C969] transition-colors flex items-center gap-1.5">
                   <span className="text-[10px] text-[#E2A93B]">›</span> Nos Réalisations
                 </a>
               </li>
               <li>
-                <a href="#actualites" className="hover:text-[#F3C969] transition-colors flex items-center gap-1.5">
+                <a href="/news" className="hover:text-[#F3C969] transition-colors flex items-center gap-1.5">
                   <span className="text-[10px] text-[#E2A93B]">›</span> Actualités &amp; Insights
                 </a>
               </li>
@@ -125,16 +130,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuoteModal }) => {
         {/* Barre de copyright et mentions légales */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-slate-500">
           <div>
-            © 2024 Les Anges du Digital. Tous droits réservés. Douala, Cameroun.
+            © {new Date().getFullYear()} Les Anges du Digital. Tous droits réservés. Douala, Cameroun.
           </div>
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-            <a href="#hero" className="hover:text-slate-300 transition-colors">
+            <a href="/privacy" className="hover:text-slate-300 transition-colors">
               Politique de Confidentialité
             </a>
-            <a href="#hero" className="hover:text-slate-300 transition-colors">
+            <a href="/terms" className="hover:text-slate-300 transition-colors">
               Conditions Générales
             </a>
-            <a href="#hero" className="hover:text-slate-300 transition-colors">
+            <a href="/contact" className="hover:text-slate-300 transition-colors">
               SLA &amp; Sécurité
             </a>
           </div>

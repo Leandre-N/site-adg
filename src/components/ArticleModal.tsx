@@ -63,7 +63,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({ post, onClose }) => 
         {/* Footer */}
         <div className="p-5 border-t border-white/10 bg-[#07132B] flex items-center justify-between">
           <span className="text-xs text-slate-400 font-mono">
-            Publication officielle certifiée
+            Les Anges du Digital · Douala
           </span>
           <button
             onClick={onClose}

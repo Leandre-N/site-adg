@@ -68,6 +68,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ onBackToHome, onOpenQu
               </p>
               <p className="text-xs sm:text-sm text-[#9AA7C7] leading-relaxed">
                 Fondée à Douala, la métropole économique du Cameroun, notre structure répond à un impératif clair : élever le niveau d'exigence technique et d'intégrité opérationnelle dans la conception de solutions logicielles d'entreprise en Afrique Centrale.
+                              Basée à Douala, l’agence accompagne les organisations dans leurs projets numériques, de la réflexion à la mise en œuvre, avec une attention portée à la créativité, à la qualité et à l’éthique.
               </p>
             </div>
 
@@ -104,11 +105,12 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({ onBackToHome, onOpenQu
               </h3>
               <p className="text-xs sm:text-sm text-[#9AA7C7] leading-relaxed">
                 Une équipe permanente d'architectes logiciels, d'ingénieurs réseaux et de consultants certifiés. Nous disposons d'équipements de test réels pour reproduire les conditions de connectivité et de charge des réseaux télécoms locaux.
+                              Les Anges du Digital accompagne ses clients depuis Douala. Contactez l’équipe pour échanger sur votre projet et définir le type d’accompagnement adapté.
               </p>
               <div className="pt-2 flex items-center gap-3">
                 <div className="flex items-center gap-2 text-xs text-[#F3C969]">
                   <MapPin className="w-4 h-4 text-[#E2A93B]" />
-                  <span>En face de THE BEST, Douala</span>
+                  <a href="https://maps.app.goo.gl/BCdLMBYbAypVBzvg7" target="_blank" rel="noreferrer" className="hover:underline">En face de THE BEST, Douala · Itinéraire</a>
                 </div>
               </div>
             </div>

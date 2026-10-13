@@ -17,8 +17,8 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'application-mobile-tenysy',
     category: 'APPLICATION MOBILE',
     categoryType: 'product',
-    date: '14 Octobre 2024',
-    readTime: 'Lecture 4 min',
+    date: 'Présentation',
+    readTime: 'Lecture 3 min',
     title: 'TENYSY : une application mobile aux espaces multiples',
     excerpt: 'Messagerie, découverte du patrimoine culturel, services, paiements, boutique et compte utilisateur : aperçu des espaces visibles dans la démonstration de TENYSY.',
     author: 'L\'Équipe TENYSY',
@@ -36,35 +36,36 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'securisation-architectures-cloud',
     category: 'CYBERSÉCURITÉ',
     categoryType: 'security',
-    date: '28 Septembre 2024',
-    readTime: 'Lecture 5 min',
+    date: 'Conseils pratiques',
+    readTime: 'Lecture 3 min',
     title: 'Sécurisation des architectures cloud d\'entreprise à Douala',
-    excerpt: 'Analyse exhaustive des vecteurs d\'attaques locaux et mise en place de stratégies de sauvegarde redondantes sur sites distants pour garantir une reprise d\'activité en temps record.',
+    excerpt: 'Quelques pratiques pour mieux protéger les comptes, les appareils et les données d’une organisation.',
     author: 'Sylvain TEUTSING',
     authorRole: 'Fondateur & CEO, Expert Cloud',
     slug: 'securisation-architectures-cloud-douala',
     content: [
-      'Le nombre d\'incidents de cybersécurité ciblant les entreprises d\'Afrique subsaharienne a crû de plus de 82% au cours des douze derniers mois. Le rançongiciel (ransomware) et les attaques par force brute sur les postes distants constituent la première menace pour la pérennité financière de nos institutions.',
-      'La Règle du 3-2-1 Révisée pour l\'Afrique Centrale : Nous préconisons la détention de 3 copies de vos données critiques, sur 2 supports différents (serveur local NVMe + stockage objet chiffré), dont 1 copie géographiquement isolée hors du Cameroun (par exemple sur notre cluster européen chiffré AES-256).',
-      'Segmentation Réseau et Politiques Zéro-Trust : Isoler physiquement et logiquement le réseau Wi-Fi visiteurs, les imprimantes multifonctions et les serveurs de bases de données empêche la propagation latérale d\'une charge malveillante.',
-      'SLA de Reprise d\'Activité : Chez Les Anges du Digital, nous mesurons notre efficacité non pas sur des promesses, mais sur le RPO (Recovery Point Objective < 1 heure) et le RTO (Recovery Time Objective < 4 heures).'
+      'Commencez par recenser les comptes, appareils et services numériques utilisés par votre organisation. Identifiez les personnes qui y ont accès et retirez les accès qui ne sont plus nécessaires.',
+      'Utilisez des mots de passe robustes et uniques, activez la vérification en plusieurs étapes lorsqu’elle est proposée et sensibilisez les équipes aux liens ou pièces jointes inattendus.',
+      'Organisez des sauvegardes régulières des données importantes et vérifiez périodiquement que les fichiers peuvent être restaurés.',
+      'Les besoins varient selon les outils et les risques propres à chaque structure. Une revue de sécurité permet de définir des mesures proportionnées à votre environnement.'
     ]
   },
   {
     id: 'souverainete-numerique-afrique',
     category: 'STRATÉGIE DIGITALE',
     categoryType: 'strategy',
-    date: '05 Septembre 2024',
-    readTime: 'Lecture 6 min',
-    title: 'Vers une souveraineté logicielle : Bâtir des outils par et pour les talents locaux',
-    excerpt: 'Pourquoi importer des logiciels occidentaux inadaptés bride la compétitivité et comment l\'ingénierie locale forge l\'indépendance économique.',
+    date: 'Guide pratique',
+    readTime: 'Lecture 3 min',
+    title: 'Construire une présence numérique cohérente',
+    excerpt: 'Comment relier vos objectifs, votre identité et les bons canaux numériques dans un plan d’action réaliste.',
     author: 'Sylvain TEUTSING',
     authorRole: 'Fondateur & CEO',
-    slug: 'souverainete-numerique-talents-locaux',
+    slug: 'presence-numerique-coherente',
     content: [
-      'L\'Afrique ne doit plus être une simple consommatrice de logiciels conçus selon des réalités fiscales et opérationnelles qui ne sont pas les siennes.',
-      'TENYSY est présentée comme une application mobile qui rassemble communication, découverte culturelle, services et fonctionnalités commerciales dans une même plateforme.',
-      'Développer des solutions souveraines, c\'est garder la valeur ajoutée et les données stratégiques sur notre continent tout en formant la prochaine génération d\'ingénieurs d\'élite.'
+      'Une présence numérique utile commence par une question simple : que doivent pouvoir comprendre ou faire vos clients en ligne ?',
+      'Définissez ensuite les informations prioritaires, le ton de votre marque et les canaux qui correspondent à vos ressources et à votre public.',
+      'Un site web, des contenus sociaux et des outils numériques donnent de meilleurs résultats lorsqu’ils servent une même expérience et sont maintenus dans le temps.',
+      'Un cadrage clair aide à prioriser les fonctionnalités, à anticiper les contenus nécessaires et à décider des prochaines étapes.'
     ]
   }
 ];

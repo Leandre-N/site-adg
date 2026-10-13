@@ -246,7 +246,7 @@ export const HeroSection: React.FC<HeroSectionProps> = () => {
               </p>
 
               <a
-                href="https://wa.me/237621802405?text=Bonjour%20Les%20Anges%20du%20Digital,%20je%20souhaite%20obtenir%20un%20devis"
+                href="https://wa.me/237676355915?text=Bonjour%20Les%20Anges%20du%20Digital,%20je%20souhaite%20obtenir%20un%20devis"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-5 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#E2A93B] to-[#F3C969] text-[#0B1530] font-bold text-[13px] shadow-[0_8px_24px_rgba(226,169,59,0.3)] hover:shadow-[0_12px_28px_rgba(226,169,59,0.45)] hover:scale-[1.02] active:scale-[0.98] transition-all"

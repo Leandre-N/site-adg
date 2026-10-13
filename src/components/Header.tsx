@@ -61,13 +61,13 @@ export const Header: React.FC<HeaderProps> = ({ currentTab, onSelectTab, onOpenQ
             </a>
             <div className="h-3 w-px bg-white/10 hidden sm:block"></div>
             <a 
-              href="https://wa.me/237621802405" 
+              href="https://wa.me/237676355915"
               target="_blank" 
               rel="noreferrer"
               className="flex items-center gap-1 text-[#36E2C6] font-medium hover:underline"
             >
               <Phone className="w-3 h-3" />
-              <span>+237 621 80 24 05</span>
+              <span>+237 676 35 59 15</span>
             </a>
           </div>
         </div>

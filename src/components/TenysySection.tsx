@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Reveal } from './Reveal';
 import {
   MessageCircle,
@@ -19,8 +19,6 @@ interface TenysySectionProps {
  * Univers immersif Midnight Navy avec accents Electric Teal (#36E2C6)
  */
 export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }) => {
-  const [demoRequested, setDemoRequested] = useState(false);
-
   const features = [
     {
       icon: MessageCircle,
@@ -185,13 +183,10 @@ export const TenysySection: React.FC<TenysySectionProps> = ({ onOpenQuoteModal }
                 </div>
 
                 <button
-                  onClick={() => {
-                    setDemoRequested(true);
-                    onOpenQuoteModal('Présentation de l’application mobile TENYSY');
-                  }}
+                  onClick={() => onOpenQuoteModal('Présentation de l’application mobile TENYSY')}
                   className="px-5 py-2.5 rounded-xl bg-[#36E2C6] hover:bg-[#28C7AD] text-[#05132C] font-bold text-[13px] shadow-[0_4px_16px_rgba(54,226,198,0.25)] transition-all cursor-pointer"
                 >
-                  {demoRequested ? 'Demande envoyée ✓' : 'En savoir plus sur TENYSY'}
+                  En savoir plus sur TENYSY
                 </button>
               </div>
 

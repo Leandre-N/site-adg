@@ -1,32 +1,31 @@
 import React from 'react';
 import { Reveal } from './Reveal';
-import { CountUp } from './CountUp';
 
 /**
- * StatsSection: Compteurs de performance et réalisations
+ * StatsSection: Repères de l'offre de l'agence
  * Disposition en 4 colonnes régulières sur fond sombre avec typographie Bricolage Grotesque
  */
 export const StatsSection: React.FC = () => {
-  const metrics = [
+  const highlights = [
     {
-      value: '91',
-      label: 'Clients satisfaits',
-      sublabel: 'Accompagnés avec rigueur',
+      value: 'Web',
+      label: 'Sites & portails',
+      sublabel: 'Conception adaptée à vos objectifs',
     },
     {
-      value: '+99',
-      label: 'Projets terminés',
-      sublabel: 'Livrables en production',
+      value: 'Mobile',
+      label: 'Applications',
+      sublabel: 'Expériences numériques dédiées',
     },
     {
-      value: '03',
-      label: 'Experts qualifiés',
-      sublabel: 'Ingénierie & architecture',
+      value: 'Design',
+      label: 'Identité & contenu',
+      sublabel: 'Communication visuelle cohérente',
     },
     {
-      value: '+10',
-      label: 'Articles de blog',
-      sublabel: "Partages d'expertise",
+      value: 'Support',
+      label: 'Infrastructure IT',
+      sublabel: 'Réseau, hébergement & maintenance',
     },
   ];
 
@@ -34,7 +33,7 @@ export const StatsSection: React.FC = () => {
     <section className="bg-[#05132C] text-white py-14 px-4 sm:px-8 border-t border-b border-white/10">
       <div className="max-w-[1380px] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
-          {metrics.map((item, index) => (
+          {highlights.map((item, index) => (
               <Reveal
                 key={index}
                 delay={index * 85}
@@ -42,8 +41,7 @@ export const StatsSection: React.FC = () => {
               >
               <div className="motion-card rounded-xl py-2">
               <div className="font-['Bricolage_Grotesque'] text-[40px] sm:text-[48px] lg:text-[54px] font-[800] text-white tracking-tight leading-none tabular-nums">
-                <CountUp value={item.value} />
-                <span className="sr-only">{item.value}</span>
+                {item.value}
               </div>
               <div className="text-[15px] sm:text-[16px] font-semibold text-[#F3F5FA] mt-2">
                 {item.label}

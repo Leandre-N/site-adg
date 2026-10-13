@@ -115,6 +115,11 @@ export const BlogScreen: React.FC<BlogScreenProps> = ({ onBackToHome, onSelectPo
             </div>
           ))}
         </div>
+        {filteredPosts.length === 0 && (
+          <p className="rounded-2xl border border-white/10 bg-[#0E1B38] p-8 text-center text-sm text-[#9AA7C7]">
+            Aucun article ne correspond à cette recherche. Essayez un autre mot-clé.
+          </p>
+        )}
 
       </div>
     </div>

@@ -1,180 +1,81 @@
-import React, { useState } from 'react';
-import { ArrowLeft, ArrowUpRight, CheckCircle2, Building, ShieldCheck, ExternalLink, Sparkles } from 'lucide-react';
-import { CASE_STUDIES, TRUSTED_PARTNERS, ProjectCaseStudy } from '../data/portfolioData.ts';
+import React from 'react';
+import { ArrowLeft, ArrowUpRight, Globe, Smartphone, Palette, Network } from 'lucide-react';
 
 interface ProjectsScreenProps {
   onBackToHome: () => void;
   onOpenQuote: () => void;
 }
 
-export const ProjectsScreen: React.FC<ProjectsScreenProps> = ({ onBackToHome, onOpenQuote }) => {
-  const [selectedCase, setSelectedCase] = useState<ProjectCaseStudy | null>(null);
+const projectAreas = [
+  {
+    icon: Globe,
+    title: 'Sites web & portails',
+    description: 'Conception de présences web adaptées aux objectifs, aux contenus et aux publics de chaque organisation.',
+    tags: ['Web design', 'Portails', 'Contenu'],
+  },
+  {
+    icon: Smartphone,
+    title: 'Applications & outils numériques',
+    description: 'Création d’expériences numériques utiles, depuis le cadrage du besoin jusqu’à la réalisation de l’interface.',
+    tags: ['Application mobile', 'UX/UI', 'Prototypage'],
+  },
+  {
+    icon: Palette,
+    title: 'Identité & communication digitale',
+    description: 'Déclinaison d’une identité visuelle cohérente pour le web et les supports de communication.',
+    tags: ['Identité visuelle', 'Supports', 'Réseaux sociaux'],
+  },
+  {
+    icon: Network,
+    title: 'Infrastructure & accompagnement',
+    description: 'Mise en place et suivi de solutions d’hébergement, de réseau, de maintenance et de support informatique.',
+    tags: ['Hébergement', 'Réseau', 'Support'],
+  },
+];
 
-  return (
-    <div className="min-h-screen bg-[#07132B] text-white py-12 px-4 sm:px-8">
-      <div className="max-w-7xl mx-auto">
-        
-        {/* Navigation & Header */}
-        <div className="mb-12">
-          <button
-            onClick={onBackToHome}
-            className="inline-flex items-center gap-2 text-xs font-semibold text-[#9AA7C7] hover:text-white px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 mb-6 transition-colors"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Retour à l'accueil</span>
-          </button>
+export const ProjectsScreen: React.FC<ProjectsScreenProps> = ({ onBackToHome, onOpenQuote }) => (
+  <main className="min-h-screen bg-[#07132B] px-4 py-12 text-white sm:px-8 lg:py-20">
+    <div className="mx-auto max-w-7xl">
+      <button
+        onClick={onBackToHome}
+        className="mb-8 inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-[#9AA7C7] transition-colors hover:bg-white/10 hover:text-white"
+      >
+        <ArrowLeft className="h-4 w-4" /> Retour à l’accueil
+      </button>
 
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#E2A93B] block mb-2 font-mono">
-                RÉALISATIONS & ÉTUDES DE CAS
-              </span>
-              <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-                Projets livrés avec rigueur en Afrique Centrale
-              </h1>
+      <header className="mb-12 max-w-3xl">
+        <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#F3C969]">Réalisations &amp; savoir-faire</span>
+        <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-5xl">Des idées numériques concrétisées avec méthode</h1>
+        <p className="mt-5 text-base leading-relaxed text-[#9AA7C7] sm:text-lg">
+          Les projets de l’agence s’inscrivent dans plusieurs domaines de conception et d’accompagnement. Chaque mission commence par la compréhension de vos objectifs et se précise avec vous.
+        </p>
+      </header>
+
+      <section aria-label="Domaines de réalisation" className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {projectAreas.map(({ icon: Icon, title, description, tags }) => (
+          <article key={title} className="rounded-2xl border border-white/10 bg-[#0E1B38] p-6 sm:p-8">
+            <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-[#36E2C6]/25 bg-[#36E2C6]/10 text-[#36E2C6]">
+              <Icon className="h-6 w-6" />
             </div>
-
-            <button
-              onClick={onOpenQuote}
-              className="px-6 py-3 rounded-xl bg-[#E2A93B] hover:bg-[#F3C969] text-[#0B1530] font-bold text-xs transition-all shadow-lg self-start md:self-auto"
-            >
-              Lancer votre projet
-            </button>
-          </div>
-        </div>
-
-        {/* Case Studies Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {CASE_STUDIES.map((cs) => (
-            <div
-              key={cs.id}
-              className="bg-[#0E1B38] rounded-2xl p-7 sm:p-8 border border-white/10 hover:border-[#E2A93B]/40 transition-all shadow-xl flex flex-col justify-between group"
-            >
-              <div>
-                {/* Meta */}
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#36E2C6]"></span>
-                    <span className="font-display text-sm font-bold text-white">{cs.clientName}</span>
-                    <span className="text-white/20">·</span>
-                    <span className="text-xs text-[#9AA7C7]">{cs.location}</span>
-                  </div>
-                  <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-white/5 text-[#E2A93B]">
-                    {cs.year}
-                  </span>
-                </div>
-
-                <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-[#F3C969] transition-colors leading-snug">
-                  {cs.title}
-                </h3>
-
-                <p className="font-sans text-xs sm:text-sm text-[#9AA7C7] leading-relaxed mb-6">
-                  {cs.summary}
-                </p>
-
-                {/* Metrics */}
-                <div className="grid grid-cols-3 gap-3 p-3.5 rounded-xl bg-[#081226] border border-white/5 mb-6">
-                  {cs.impactMetrics.map((m, idx) => (
-                    <div key={idx} className="text-center">
-                      <div className="font-display text-lg font-bold text-[#36E2C6] tabular-nums">
-                        {m.value}
-                      </div>
-                      <div className="text-[10px] text-slate-400 mt-0.5">
-                        {m.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Technologies & Services */}
-              <div className="pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-3">
-                <div className="flex flex-wrap gap-1.5">
-                  {cs.techStack.map((tech, idx) => (
-                    <span key={idx} className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-300">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <button
-                  onClick={() => setSelectedCase(cs)}
-                  className="text-xs font-semibold text-[#E2A93B] hover:text-[#F3C969] inline-flex items-center gap-1"
-                >
-                  <span>Détails</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
+            <h2 className="font-display text-xl font-bold text-white">{title}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-[#9AA7C7]">{description}</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {tags.map((tag) => <span key={tag} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-slate-300">{tag}</span>)}
             </div>
-          ))}
+          </article>
+        ))}
+      </section>
+
+      <div className="mt-10 flex flex-col items-start justify-between gap-5 rounded-2xl border border-[#E2A93B]/25 bg-[#0A1633] p-6 sm:flex-row sm:items-center sm:p-8">
+        <div>
+          <h2 className="font-display text-xl font-bold">Parlons de votre prochain projet</h2>
+          <p className="mt-2 text-sm text-[#9AA7C7]">Présentez votre besoin à l’équipe basée à Douala.</p>
         </div>
-
-        {/* All Trusted Partners Bar */}
-        <div className="p-8 rounded-2xl bg-[#0A1633] border border-white/10 text-center">
-          <h3 className="font-display text-lg font-bold text-white mb-2">
-            Réseau de Confiance Partenaire
-          </h3>
-          <p className="text-xs text-[#9AA7C7] mb-6">
-            Une méthodologie éprouvée au service des leaders de la sous-région CEMAC
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {TRUSTED_PARTNERS.map((p, idx) => (
-              <span
-                key={idx}
-                className="px-4 py-2 rounded-xl bg-[#112042] border border-white/5 text-xs text-slate-300 font-medium"
-              >
-                {p.name} <span className="text-slate-500 text-[10px]">({p.sector})</span>
-              </span>
-            ))}
-          </div>
+        <div className="flex flex-wrap gap-3">
+          <a href="/services" className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/5">Voir les services <ArrowUpRight className="h-4 w-4" /></a>
+          <button onClick={onOpenQuote} className="rounded-xl bg-[#E2A93B] px-5 py-3 text-sm font-bold text-[#0B1530] transition-colors hover:bg-[#F3C969]">Décrire mon projet</button>
         </div>
-
       </div>
-
-      {/* Case Study Detail Modal */}
-      {selectedCase && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="bg-[#0B1530] border border-[#E2A93B]/40 rounded-2xl p-6 sm:p-8 max-w-2xl w-full shadow-2xl">
-            <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
-              <div>
-                <span className="text-[10px] text-[#E2A93B] font-mono uppercase font-bold">Étude Détaillée</span>
-                <h3 className="font-display text-xl font-bold text-white">{selectedCase.clientName}</h3>
-              </div>
-              <button onClick={() => setSelectedCase(null)} className="text-slate-400 hover:text-white">✕</button>
-            </div>
-
-            <p className="text-sm text-slate-300 mb-6 leading-relaxed">
-              {selectedCase.summary}
-            </p>
-
-            <div className="space-y-3 mb-6">
-              <h4 className="text-xs font-bold uppercase text-[#36E2C6]">Services déployés</h4>
-              {selectedCase.servicesDelivered.map((srv, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-xs text-slate-200">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#36E2C6]" />
-                  <span>{srv}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex justify-end gap-3 pt-4 border-t border-white/10">
-              <button
-                onClick={() => setSelectedCase(null)}
-                className="px-4 py-2 rounded-xl text-xs text-slate-400 hover:text-white"
-              >
-                Fermer
-              </button>
-              <button
-                onClick={() => { setSelectedCase(null); onOpenQuote(); }}
-                className="px-5 py-2 rounded-xl bg-[#E2A93B] text-[#0B1530] font-bold text-xs"
-              >
-                Demander un projet similaire
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
-  );
-};
+  </main>
+);
